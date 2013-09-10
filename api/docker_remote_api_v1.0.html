@@ -1,0 +1,1693 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="google-site-verification" content="UxV66EKuPe87dgnH1sbrldrx6VsoWMrx5NjwkgUFxXI" />
+
+    <title>Remote API v1.0 - Docker Documentation</title>
+
+    <meta name="description" content="API Documentation for Docker" />
+    <meta name="keywords" content="API, Docker, rcli, REST, documentation" />
+
+    <script type="text/javascript">
+        // This is probably used by the search engine
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:    '../',
+            VERSION:     '0',
+            COLLAPSE_INDEX: false,
+            FILE_SUFFIX: '.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+    <link rel="stylesheet" href="../_static/css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/bootstrap-responsive.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/main.css" type="text/css" />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/js/docs.js"></script>
+
+</head>
+
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-dotcloud">
+        <div class="container" style="text-align: center;">
+
+            <div style="float: right" class="pull-right">
+                <ul class="nav">
+                    <li id="nav-introduction"><a href="http://www.docker.io/">Introduction</a></li>
+                    <li id="nav-gettingstarted"><a href="http://www.docker.io/gettingstarted/">Getting started</a></li>
+                    <li id="nav-documentation" class="active"><a href="http://docs.docker.io/en/latest/">Documentation</a></li>
+                    <li id="nav-blog"><a href="http://blog.docker.io/">Blog</a></li>
+                </ul>
+                <!--<div class="social links" style="float: right; margin-top: 14px; margin-left: 12px">-->
+                    <!--<a class="twitter" href="http://twitter.com/getdocker">Twitter</a>-->
+                    <!--<a class="github" href="https://github.com/dotcloud/docker/">GitHub</a>-->
+                <!--</div>-->
+            </div>
+
+            <div style="margin-left: -12px; float: left;">
+                <a href="http://www.docker.io"><img style="margin-top: 12px; height: 38px" src="../_static/img/docker-letters-logo.gif"></a>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="span12 titlebar">
+            <!--<span class="pull-right" style="margin-left: 20px; font-size: 20px">0.1</span>-->
+            <div class="pull-right" id="fork-us" style="margin-top: 16px; margin-right: 16px;">
+                <a  href="http://github.com/dotcloud/docker/"><img src="../_static/img/fork-us.png"> Fork us on Github</a>
+            </div>
+            <h1 class="pageheader">DOCUMENTATION</h1>
+
+        </div>
+    </div>
+
+</div>
+
+<div class="container">
+
+    <!-- Docs nav
+     ================================================== -->
+    <div class="row" style="position: relative">
+        <div class="span3" style="height:100%;" >
+
+        </div>
+
+        <div class="span3 sidebar bs-docs-sidebar" style="position: absolute">
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/index.html">Concepts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../index.html">Introduction</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../installation/ubuntulinux.html">Ubuntu Linux</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/binaries.html">Binaries</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/vagrant.html">Using Vagrant (Mac, Linux)</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/windows.html">Using Vagrant (Windows)</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/amazon.html">Amazon EC2</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/rackspace.html">Rackspace Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/archlinux.html">Arch Linux</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/kernel.html">Kernel Requirements</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../use/index.html">Use</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../use/basics.html">The Basics</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../use/workingwithrepository.html">Working with the Repository</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../use/builder.html">Docker Builder</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../use/puppet.html">Using Puppet</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../examples/running_examples.html">Running the Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/hello_world.html">Hello World</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/hello_world_daemon.html">Hello World Daemon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/python_web_app.html">Python Web App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/nodejs_web_app.html">Node.js Web App</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/running_redis_service.html">Redis Service</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/running_ssh_service.html">SSH Daemon Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/couchdb_data_volumes.html">CouchDB Service</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../commandline/index.html">Commands</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/cli.html">Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/attach.html"><tt class="docutils literal"><span class="pre">attach</span></tt> &#8211; Attach to a running container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/build.html"><tt class="docutils literal"><span class="pre">build</span></tt> &#8211; Build a container from a Dockerfile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/commit.html"><tt class="docutils literal"><span class="pre">commit</span></tt> &#8211; Create a new image from a container&#8217;s changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/diff.html"><tt class="docutils literal"><span class="pre">diff</span></tt> &#8211; Inspect changes on a container&#8217;s filesystem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/export.html"><tt class="docutils literal"><span class="pre">export</span></tt> &#8211; Stream the contents of a container as a tar archive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/history.html"><tt class="docutils literal"><span class="pre">history</span></tt> &#8211; Show the history of an image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/images.html"><tt class="docutils literal"><span class="pre">images</span></tt> &#8211; List images</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/import.html"><tt class="docutils literal"><span class="pre">import</span></tt> &#8211; Create a new filesystem image from the contents of a tarball</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/info.html"><tt class="docutils literal"><span class="pre">info</span></tt> &#8211; Display system-wide information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/inspect.html"><tt class="docutils literal"><span class="pre">inspect</span></tt> &#8211; Return low-level information on a container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/kill.html"><tt class="docutils literal"><span class="pre">kill</span></tt> &#8211; Kill a running container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/login.html"><tt class="docutils literal"><span class="pre">login</span></tt> &#8211; Register or Login to the docker registry server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/logs.html"><tt class="docutils literal"><span class="pre">logs</span></tt> &#8211; Fetch the logs of a container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/port.html"><tt class="docutils literal"><span class="pre">port</span></tt> &#8211; Lookup the public-facing port which is NAT-ed to PRIVATE_PORT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/ps.html"><tt class="docutils literal"><span class="pre">ps</span></tt> &#8211; List containers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/pull.html"><tt class="docutils literal"><span class="pre">pull</span></tt> &#8211; Pull an image or a repository from the docker registry server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/push.html"><tt class="docutils literal"><span class="pre">push</span></tt> &#8211; Push an image or a repository to the docker registry server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/restart.html"><tt class="docutils literal"><span class="pre">restart</span></tt> &#8211; Restart a running container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/rm.html"><tt class="docutils literal"><span class="pre">rm</span></tt> &#8211; Remove a container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/rmi.html"><tt class="docutils literal"><span class="pre">rmi</span></tt> &#8211; Remove an image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/run.html"><tt class="docutils literal"><span class="pre">run</span></tt> &#8211; Run a command in a new container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/search.html"><tt class="docutils literal"><span class="pre">search</span></tt> &#8211; Search for an image in the docker index</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/start.html"><tt class="docutils literal"><span class="pre">start</span></tt> &#8211; Start a stopped container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/stop.html"><tt class="docutils literal"><span class="pre">stop</span></tt> &#8211; Stop a running container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/tag.html"><tt class="docutils literal"><span class="pre">tag</span></tt> &#8211; Tag an image into a repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/version.html"><tt class="docutils literal"><span class="pre">version</span></tt> &#8211; Show the docker version information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/wait.html"><tt class="docutils literal"><span class="pre">wait</span></tt> &#8211; Block until a container stops, then print its exit code</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/attach.html">attach</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/build.html">build</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/commit.html">commit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/diff.html">diff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/export.html">export</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/history.html">history</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/images.html">images</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/import.html">import</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/info.html">info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/inspect.html">inspect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/kill.html">kill</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/login.html">login</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/logs.html">logs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/port.html">port</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/ps.html">ps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/pull.html">pull</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/push.html">push</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/restart.html">restart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/rm.html">rm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/rmi.html">rmi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/run.html">run</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/search.html">search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/start.html">start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/stop.html">stop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/tag.html">tag</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/version.html">version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/wait.html">wait</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/index.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/contributing.html">Contributing to Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/devenvironment.html">Setting Up a Dev Environment</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">APIs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="registry_index_spec.html">Registry &amp; index Spec</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="registry_api.html">Docker Registry API</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index_api.html">Docker Index API</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="docker_remote_api.html">Docker Remote API</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="docker_remote_api.html#docker-remote-api-client-libraries">Docker Remote API Client Libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a><ul class="simple">
+</ul>
+</li>
+</ul>
+
+        </div>
+
+        <!-- body block -->
+        <div class="span9">
+
+            <!-- Main section
+            ================================================== -->
+            <section id="global" class="containerblock">
+                
+  <div class="section" id="docker-remote-api-v1-0">
+<h1><a class="toc-backref" href="#id1">Docker Remote API v1.0</a></h1>
+<div class="contents topic" id="table-of-contents">
+<p class="topic-title first">Table of Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#docker-remote-api-v1-0" id="id1">Docker Remote API v1.0</a><ul>
+<li><a class="reference internal" href="#brief-introduction" id="id2">1. Brief introduction</a></li>
+<li><a class="reference internal" href="#endpoints" id="id3">2. Endpoints</a><ul>
+<li><a class="reference internal" href="#containers" id="id4">2.1 Containers</a><ul>
+<li><a class="reference internal" href="#list-containers" id="id5">List containers</a></li>
+<li><a class="reference internal" href="#create-a-container" id="id6">Create a container</a></li>
+<li><a class="reference internal" href="#inspect-a-container" id="id7">Inspect a container</a></li>
+<li><a class="reference internal" href="#inspect-changes-on-a-container-s-filesystem" id="id8">Inspect changes on a container&#8217;s filesystem</a></li>
+<li><a class="reference internal" href="#export-a-container" id="id9">Export a container</a></li>
+<li><a class="reference internal" href="#start-a-container" id="id10">Start a container</a></li>
+<li><a class="reference internal" href="#stop-a-contaier" id="id11">Stop a contaier</a></li>
+<li><a class="reference internal" href="#restart-a-container" id="id12">Restart a container</a></li>
+<li><a class="reference internal" href="#kill-a-container" id="id13">Kill a container</a></li>
+<li><a class="reference internal" href="#attach-to-a-container" id="id14">Attach to a container</a></li>
+<li><a class="reference internal" href="#wait-a-container" id="id15">Wait a container</a></li>
+<li><a class="reference internal" href="#remove-a-container" id="id16">Remove a container</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#images" id="id17">2.2 Images</a><ul>
+<li><a class="reference internal" href="#list-images" id="id18">List Images</a></li>
+<li><a class="reference internal" href="#create-an-image" id="id19">Create an image</a></li>
+<li><a class="reference internal" href="#insert-a-file-in-a-image" id="id20">Insert a file in a image</a></li>
+<li><a class="reference internal" href="#inspect-an-image" id="id21">Inspect an image</a></li>
+<li><a class="reference internal" href="#get-the-history-of-an-image" id="id22">Get the history of an image</a></li>
+<li><a class="reference internal" href="#push-an-image-on-the-registry" id="id23">Push an image on the registry</a></li>
+<li><a class="reference internal" href="#tag-an-image-into-a-repository" id="id24">Tag an image into a repository</a></li>
+<li><a class="reference internal" href="#remove-an-image" id="id25">Remove an image</a></li>
+<li><a class="reference internal" href="#search-images" id="id26">Search images</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#misc" id="id27">2.3 Misc</a><ul>
+<li><a class="reference internal" href="#build-an-image-from-dockerfile-via-stdin" id="id28">Build an image from Dockerfile via stdin</a></li>
+<li><a class="reference internal" href="#get-default-username-and-email" id="id29">Get default username and email</a></li>
+<li><a class="reference internal" href="#check-auth-configuration-and-store-it" id="id30">Check auth configuration and store it</a></li>
+<li><a class="reference internal" href="#display-system-wide-information" id="id31">Display system-wide information</a></li>
+<li><a class="reference internal" href="#show-the-docker-version-information" id="id32">Show the docker version information</a></li>
+<li><a class="reference internal" href="#create-a-new-image-from-a-container-s-changes" id="id33">Create a new image from a container&#8217;s changes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#going-further" id="id34">3. Going further</a><ul>
+<li><a class="reference internal" href="#inside-docker-run" id="id35">3.1 Inside &#8216;docker run&#8217;</a></li>
+<li><a class="reference internal" href="#hijacking" id="id36">3.2 Hijacking</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="brief-introduction">
+<h2><a class="toc-backref" href="#id2">1. Brief introduction</a></h2>
+<ul class="simple">
+<li>The Remote API is replacing rcli</li>
+<li>Default port in the docker deamon is 4243</li>
+<li>The API tends to be REST, but for some complex commands, like attach or pull, the HTTP connection is hijacked to transport stdout stdin and stderr</li>
+</ul>
+</div>
+<div class="section" id="endpoints">
+<h2><a class="toc-backref" href="#id3">2. Endpoints</a></h2>
+<div class="section" id="containers">
+<h3><a class="toc-backref" href="#id4">2.1 Containers</a></h3>
+<div class="section" id="list-containers">
+<h4><a class="toc-backref" href="#id5">List containers</a></h4>
+<dl class="get">
+<dt id="get--containers-json">
+<tt class="descname">GET </tt><tt class="descname">/containers/json</tt></dt>
+<dd><p>List containers</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="nf">GET</span> <span class="nn">/containers/json?all=1&amp;before=8dfafdbc3a40</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">[</span>
+     <span class="p">{</span>
+             <span class="nt">&quot;Id&quot;</span><span class="p">:</span> <span class="s2">&quot;8dfafdbc3a40&quot;</span><span class="p">,</span>
+             <span class="nt">&quot;Image&quot;</span><span class="p">:</span> <span class="s2">&quot;base:latest&quot;</span><span class="p">,</span>
+             <span class="nt">&quot;Command&quot;</span><span class="p">:</span> <span class="s2">&quot;echo 1&quot;</span><span class="p">,</span>
+             <span class="nt">&quot;Created&quot;</span><span class="p">:</span> <span class="mi">1367854155</span><span class="p">,</span>
+             <span class="nt">&quot;Status&quot;</span><span class="p">:</span> <span class="s2">&quot;Exit 0&quot;</span>
+     <span class="p">},</span>
+     <span class="p">{</span>
+             <span class="nt">&quot;Id&quot;</span><span class="p">:</span> <span class="s2">&quot;9cd87474be90&quot;</span><span class="p">,</span>
+             <span class="nt">&quot;Image&quot;</span><span class="p">:</span> <span class="s2">&quot;base:latest&quot;</span><span class="p">,</span>
+             <span class="nt">&quot;Command&quot;</span><span class="p">:</span> <span class="s2">&quot;echo 222222&quot;</span><span class="p">,</span>
+             <span class="nt">&quot;Created&quot;</span><span class="p">:</span> <span class="mi">1367854155</span><span class="p">,</span>
+             <span class="nt">&quot;Status&quot;</span><span class="p">:</span> <span class="s2">&quot;Exit 0&quot;</span>
+     <span class="p">},</span>
+     <span class="p">{</span>
+             <span class="nt">&quot;Id&quot;</span><span class="p">:</span> <span class="s2">&quot;3176a2479c92&quot;</span><span class="p">,</span>
+             <span class="nt">&quot;Image&quot;</span><span class="p">:</span> <span class="s2">&quot;base:latest&quot;</span><span class="p">,</span>
+             <span class="nt">&quot;Command&quot;</span><span class="p">:</span> <span class="s2">&quot;echo 3333333333333333&quot;</span><span class="p">,</span>
+             <span class="nt">&quot;Created&quot;</span><span class="p">:</span> <span class="mi">1367854154</span><span class="p">,</span>
+             <span class="nt">&quot;Status&quot;</span><span class="p">:</span> <span class="s2">&quot;Exit 0&quot;</span>
+     <span class="p">},</span>
+     <span class="p">{</span>
+             <span class="nt">&quot;Id&quot;</span><span class="p">:</span> <span class="s2">&quot;4cb07b47f9fb&quot;</span><span class="p">,</span>
+             <span class="nt">&quot;Image&quot;</span><span class="p">:</span> <span class="s2">&quot;base:latest&quot;</span><span class="p">,</span>
+             <span class="nt">&quot;Command&quot;</span><span class="p">:</span> <span class="s2">&quot;echo 444444444444444444444444444444444&quot;</span><span class="p">,</span>
+             <span class="nt">&quot;Created&quot;</span><span class="p">:</span> <span class="mi">1367854152</span><span class="p">,</span>
+             <span class="nt">&quot;Status&quot;</span><span class="p">:</span> <span class="s2">&quot;Exit 0&quot;</span>
+     <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Query Parameters:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><ul class="first simple">
+<li><strong>all</strong> &#8211; 1/True/true or 0/False/false, Show all containers. Only running containers are shown by default</li>
+<li><strong>limit</strong> &#8211; Show <tt class="docutils literal"><span class="pre">limit</span></tt> last created containers, include non-running ones.</li>
+<li><strong>since</strong> &#8211; Show only containers created since Id, include non-running ones.</li>
+<li><strong>before</strong> &#8211; Show only containers created before Id, include non-running ones.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>200</strong> &#8211; no error</li>
+<li><strong>400</strong> &#8211; bad parameter</li>
+<li><strong>500</strong> &#8211; server error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="create-a-container">
+<h4><a class="toc-backref" href="#id6">Create a container</a></h4>
+<dl class="post">
+<dt id="post--containers-create">
+<tt class="descname">POST </tt><tt class="descname">/containers/create</tt></dt>
+<dd><p>Create a container</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="nf">POST</span> <span class="nn">/containers/create</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">{</span>
+     <span class="nt">&quot;Hostname&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;User&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;Memory&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+     <span class="nt">&quot;MemorySwap&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+     <span class="nt">&quot;AttachStdin&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+     <span class="nt">&quot;AttachStdout&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+     <span class="nt">&quot;AttachStderr&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+     <span class="nt">&quot;PortSpecs&quot;</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span>
+     <span class="nt">&quot;Tty&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+     <span class="nt">&quot;OpenStdin&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+     <span class="nt">&quot;StdinOnce&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+     <span class="nt">&quot;Env&quot;</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span>
+     <span class="nt">&quot;Cmd&quot;</span><span class="p">:[</span>
+             <span class="s2">&quot;date&quot;</span>
+     <span class="p">],</span>
+     <span class="nt">&quot;Dns&quot;</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span>
+     <span class="nt">&quot;Image&quot;</span><span class="p">:</span><span class="s2">&quot;base&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;Volumes&quot;</span><span class="p">:{},</span>
+     <span class="nt">&quot;VolumesFrom&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">201</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">{</span>
+     <span class="nt">&quot;Id&quot;</span><span class="p">:</span><span class="s2">&quot;e90e34656806&quot;</span>
+     <span class="s2">&quot;Warnings&quot;</span><span class="p">:[]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Json Parameters:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><ul class="first simple">
+<li><strong>config</strong> &#8211; the container&#8217;s configuration</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>201</strong> &#8211; no error</li>
+<li><strong>404</strong> &#8211; no such container</li>
+<li><strong>406</strong> &#8211; impossible to attach (container not running)</li>
+<li><strong>500</strong> &#8211; server error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="inspect-a-container">
+<h4><a class="toc-backref" href="#id7">Inspect a container</a></h4>
+<dl class="get">
+<dt id="get--containers-(id)-json">
+<tt class="descname">GET </tt><tt class="descname">/containers/</tt><big>(</big><em>id</em><big>)</big><tt class="descname">/json</tt></dt>
+<dd><p>Return low-level information on the container <tt class="docutils literal"><span class="pre">id</span></tt></p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="nf">GET</span> <span class="nn">/containers/4fa6e0f0c678/json</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">{</span>
+             <span class="nt">&quot;Id&quot;</span><span class="p">:</span> <span class="s2">&quot;4fa6e0f0c6786287e131c3852c58a2e01cc697a68231826813597e4994f1d6e2&quot;</span><span class="p">,</span>
+             <span class="nt">&quot;Created&quot;</span><span class="p">:</span> <span class="s2">&quot;2013-05-07T14:51:42.041847+02:00&quot;</span><span class="p">,</span>
+             <span class="nt">&quot;Path&quot;</span><span class="p">:</span> <span class="s2">&quot;date&quot;</span><span class="p">,</span>
+             <span class="nt">&quot;Args&quot;</span><span class="p">:</span> <span class="p">[],</span>
+             <span class="nt">&quot;Config&quot;</span><span class="p">:</span> <span class="p">{</span>
+                     <span class="nt">&quot;Hostname&quot;</span><span class="p">:</span> <span class="s2">&quot;4fa6e0f0c678&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;User&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;Memory&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                     <span class="nt">&quot;MemorySwap&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                     <span class="nt">&quot;AttachStdin&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                     <span class="nt">&quot;AttachStdout&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                     <span class="nt">&quot;AttachStderr&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                     <span class="nt">&quot;PortSpecs&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;Tty&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                     <span class="nt">&quot;OpenStdin&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                     <span class="nt">&quot;StdinOnce&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                     <span class="nt">&quot;Env&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;Cmd&quot;</span><span class="p">:</span> <span class="p">[</span>
+                             <span class="s2">&quot;date&quot;</span>
+                     <span class="p">],</span>
+                     <span class="nt">&quot;Dns&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;Image&quot;</span><span class="p">:</span> <span class="s2">&quot;base&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;Volumes&quot;</span><span class="p">:</span> <span class="p">{},</span>
+                     <span class="nt">&quot;VolumesFrom&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+             <span class="p">},</span>
+             <span class="nt">&quot;State&quot;</span><span class="p">:</span> <span class="p">{</span>
+                     <span class="nt">&quot;Running&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                     <span class="nt">&quot;Pid&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                     <span class="nt">&quot;ExitCode&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                     <span class="nt">&quot;StartedAt&quot;</span><span class="p">:</span> <span class="s2">&quot;2013-05-07T14:51:42.087658+02:01360&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;Ghost&quot;</span><span class="p">:</span> <span class="kc">false</span>
+             <span class="p">},</span>
+             <span class="nt">&quot;Image&quot;</span><span class="p">:</span> <span class="s2">&quot;b750fe79269d2ec9a3c593ef05b4332b1d1a02a62b4accb2c21d589ff2f5f2dc&quot;</span><span class="p">,</span>
+             <span class="nt">&quot;NetworkSettings&quot;</span><span class="p">:</span> <span class="p">{</span>
+                     <span class="nt">&quot;IpAddress&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;IpPrefixLen&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                     <span class="nt">&quot;Gateway&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;Bridge&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;PortMapping&quot;</span><span class="p">:</span> <span class="kc">null</span>
+             <span class="p">},</span>
+             <span class="nt">&quot;SysInitPath&quot;</span><span class="p">:</span> <span class="s2">&quot;/home/kitty/go/src/github.com/dotcloud/docker/bin/docker&quot;</span><span class="p">,</span>
+             <span class="nt">&quot;ResolvConfPath&quot;</span><span class="p">:</span> <span class="s2">&quot;/etc/resolv.conf&quot;</span><span class="p">,</span>
+             <span class="nt">&quot;Volumes&quot;</span><span class="p">:</span> <span class="p">{}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>200</strong> &#8211; no error</li>
+<li><strong>404</strong> &#8211; no such container</li>
+<li><strong>500</strong> &#8211; server error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="inspect-changes-on-a-container-s-filesystem">
+<h4><a class="toc-backref" href="#id8">Inspect changes on a container&#8217;s filesystem</a></h4>
+<dl class="get">
+<dt id="get--containers-(id)-changes">
+<tt class="descname">GET </tt><tt class="descname">/containers/</tt><big>(</big><em>id</em><big>)</big><tt class="descname">/changes</tt></dt>
+<dd><p>Inspect changes on container <tt class="docutils literal"><span class="pre">id</span></tt> &#8216;s filesystem</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="nf">GET</span> <span class="nn">/containers/4fa6e0f0c678/changes</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">[</span>
+     <span class="p">{</span>
+             <span class="nt">&quot;Path&quot;</span><span class="p">:</span><span class="s2">&quot;/dev&quot;</span><span class="p">,</span>
+             <span class="nt">&quot;Kind&quot;</span><span class="p">:</span><span class="mi">0</span>
+     <span class="p">},</span>
+     <span class="p">{</span>
+             <span class="nt">&quot;Path&quot;</span><span class="p">:</span><span class="s2">&quot;/dev/kmsg&quot;</span><span class="p">,</span>
+             <span class="nt">&quot;Kind&quot;</span><span class="p">:</span><span class="mi">1</span>
+     <span class="p">},</span>
+     <span class="p">{</span>
+             <span class="nt">&quot;Path&quot;</span><span class="p">:</span><span class="s2">&quot;/test&quot;</span><span class="p">,</span>
+             <span class="nt">&quot;Kind&quot;</span><span class="p">:</span><span class="mi">1</span>
+     <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>200</strong> &#8211; no error</li>
+<li><strong>404</strong> &#8211; no such container</li>
+<li><strong>500</strong> &#8211; server error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="export-a-container">
+<h4><a class="toc-backref" href="#id9">Export a container</a></h4>
+<dl class="get">
+<dt id="get--containers-(id)-export">
+<tt class="descname">GET </tt><tt class="descname">/containers/</tt><big>(</big><em>id</em><big>)</big><tt class="descname">/export</tt></dt>
+<dd><p>Export the contents of container <tt class="docutils literal"><span class="pre">id</span></tt></p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="nf">GET</span> <span class="nn">/containers/4fa6e0f0c678/export</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/octet-stream</span>
+
+{{ STREAM }}
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>200</strong> &#8211; no error</li>
+<li><strong>404</strong> &#8211; no such container</li>
+<li><strong>500</strong> &#8211; server error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="start-a-container">
+<h4><a class="toc-backref" href="#id10">Start a container</a></h4>
+<dl class="post">
+<dt id="post--containers-(id)-start">
+<tt class="descname">POST </tt><tt class="descname">/containers/</tt><big>(</big><em>id</em><big>)</big><tt class="descname">/start</tt></dt>
+<dd><p>Start the container <tt class="docutils literal"><span class="pre">id</span></tt></p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="nf">POST</span> <span class="nn">/containers/e90e34656806/start</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>200</strong> &#8211; no error</li>
+<li><strong>404</strong> &#8211; no such container</li>
+<li><strong>500</strong> &#8211; server error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="stop-a-contaier">
+<h4><a class="toc-backref" href="#id11">Stop a contaier</a></h4>
+<dl class="post">
+<dt id="post--containers-(id)-stop">
+<tt class="descname">POST </tt><tt class="descname">/containers/</tt><big>(</big><em>id</em><big>)</big><tt class="descname">/stop</tt></dt>
+<dd><p>Stop the container <tt class="docutils literal"><span class="pre">id</span></tt></p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="nf">POST</span> <span class="nn">/containers/e90e34656806/stop?t=5</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">204</span> <span class="ne">OK</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Query Parameters:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><ul class="first simple">
+<li><strong>t</strong> &#8211; number of seconds to wait before killing the container</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>204</strong> &#8211; no error</li>
+<li><strong>404</strong> &#8211; no such container</li>
+<li><strong>500</strong> &#8211; server error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="restart-a-container">
+<h4><a class="toc-backref" href="#id12">Restart a container</a></h4>
+<dl class="post">
+<dt id="post--containers-(id)-restart">
+<tt class="descname">POST </tt><tt class="descname">/containers/</tt><big>(</big><em>id</em><big>)</big><tt class="descname">/restart</tt></dt>
+<dd><p>Restart the container <tt class="docutils literal"><span class="pre">id</span></tt></p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="nf">POST</span> <span class="nn">/containers/e90e34656806/restart?t=5</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">204</span> <span class="ne">OK</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Query Parameters:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><ul class="first simple">
+<li><strong>t</strong> &#8211; number of seconds to wait before killing the container</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>204</strong> &#8211; no error</li>
+<li><strong>404</strong> &#8211; no such container</li>
+<li><strong>500</strong> &#8211; server error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="kill-a-container">
+<h4><a class="toc-backref" href="#id13">Kill a container</a></h4>
+<dl class="post">
+<dt id="post--containers-(id)-kill">
+<tt class="descname">POST </tt><tt class="descname">/containers/</tt><big>(</big><em>id</em><big>)</big><tt class="descname">/kill</tt></dt>
+<dd><p>Kill the container <tt class="docutils literal"><span class="pre">id</span></tt></p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="nf">POST</span> <span class="nn">/containers/e90e34656806/kill</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">204</span> <span class="ne">OK</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>204</strong> &#8211; no error</li>
+<li><strong>404</strong> &#8211; no such container</li>
+<li><strong>500</strong> &#8211; server error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="attach-to-a-container">
+<h4><a class="toc-backref" href="#id14">Attach to a container</a></h4>
+<dl class="post">
+<dt id="post--containers-(id)-attach">
+<tt class="descname">POST </tt><tt class="descname">/containers/</tt><big>(</big><em>id</em><big>)</big><tt class="descname">/attach</tt></dt>
+<dd><p>Attach to the container <tt class="docutils literal"><span class="pre">id</span></tt></p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="nf">POST</span> <span class="nn">/containers/16253994b7c4/attach?logs=1&amp;stream=0&amp;stdout=1</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/vnd.docker.raw-stream</span>
+
+{{ STREAM }}
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Query Parameters:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><ul class="first simple">
+<li><strong>logs</strong> &#8211; 1/True/true or 0/False/false, return logs. Default false</li>
+<li><strong>stream</strong> &#8211; 1/True/true or 0/False/false, return stream. Default false</li>
+<li><strong>stdin</strong> &#8211; 1/True/true or 0/False/false, if stream=true, attach to stdin. Default false</li>
+<li><strong>stdout</strong> &#8211; 1/True/true or 0/False/false, if logs=true, return stdout log, if stream=true, attach to stdout. Default false</li>
+<li><strong>stderr</strong> &#8211; 1/True/true or 0/False/false, if logs=true, return stderr log, if stream=true, attach to stderr. Default false</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>200</strong> &#8211; no error</li>
+<li><strong>400</strong> &#8211; bad parameter</li>
+<li><strong>404</strong> &#8211; no such container</li>
+<li><strong>500</strong> &#8211; server error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="wait-a-container">
+<h4><a class="toc-backref" href="#id15">Wait a container</a></h4>
+<dl class="post">
+<dt id="post--containers-(id)-wait">
+<tt class="descname">POST </tt><tt class="descname">/containers/</tt><big>(</big><em>id</em><big>)</big><tt class="descname">/wait</tt></dt>
+<dd><p>Block until container <tt class="docutils literal"><span class="pre">id</span></tt> stops, then returns the exit code</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="nf">POST</span> <span class="nn">/containers/16253994b7c4/wait</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">{</span><span class="nt">&quot;StatusCode&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>200</strong> &#8211; no error</li>
+<li><strong>404</strong> &#8211; no such container</li>
+<li><strong>500</strong> &#8211; server error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="remove-a-container">
+<h4><a class="toc-backref" href="#id16">Remove a container</a></h4>
+<dl class="delete">
+<dt id="delete--containers-(id)">
+<tt class="descname">DELETE </tt><tt class="descname">/containers/</tt><big>(</big><em>id</em><big>)</big></dt>
+<dd><p>Remove the container <tt class="docutils literal"><span class="pre">id</span></tt> from the filesystem</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="nf">DELETE</span> <span class="nn">/containers/16253994b7c4?v=1</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">204</span> <span class="ne">OK</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Query Parameters:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><ul class="first simple">
+<li><strong>v</strong> &#8211; 1/True/true or 0/False/false, Remove the volumes associated to the container. Default false</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>204</strong> &#8211; no error</li>
+<li><strong>400</strong> &#8211; bad parameter</li>
+<li><strong>404</strong> &#8211; no such container</li>
+<li><strong>500</strong> &#8211; server error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="images">
+<h3><a class="toc-backref" href="#id17">2.2 Images</a></h3>
+<div class="section" id="list-images">
+<h4><a class="toc-backref" href="#id18">List Images</a></h4>
+<dl class="get">
+<dt id="get--images-(format)">
+<tt class="descname">GET </tt><tt class="descname">/images/</tt><big>(</big><em>format</em><big>)</big></dt>
+<dd><p>List images <tt class="docutils literal"><span class="pre">format</span></tt> could be json or viz (json default)</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="nf">GET</span> <span class="nn">/images/json?all=0</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">[</span>
+     <span class="p">{</span>
+             <span class="nt">&quot;Repository&quot;</span><span class="p">:</span><span class="s2">&quot;base&quot;</span><span class="p">,</span>
+             <span class="nt">&quot;Tag&quot;</span><span class="p">:</span><span class="s2">&quot;ubuntu-12.10&quot;</span><span class="p">,</span>
+             <span class="nt">&quot;Id&quot;</span><span class="p">:</span><span class="s2">&quot;b750fe79269d&quot;</span><span class="p">,</span>
+             <span class="nt">&quot;Created&quot;</span><span class="p">:</span><span class="mi">1364102658</span>
+     <span class="p">},</span>
+     <span class="p">{</span>
+             <span class="nt">&quot;Repository&quot;</span><span class="p">:</span><span class="s2">&quot;base&quot;</span><span class="p">,</span>
+             <span class="nt">&quot;Tag&quot;</span><span class="p">:</span><span class="s2">&quot;ubuntu-quantal&quot;</span><span class="p">,</span>
+             <span class="nt">&quot;Id&quot;</span><span class="p">:</span><span class="s2">&quot;b750fe79269d&quot;</span><span class="p">,</span>
+             <span class="nt">&quot;Created&quot;</span><span class="p">:</span><span class="mi">1364102658</span>
+     <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="nf">GET</span> <span class="nn">/images/viz</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">text/plain</span>
+
+digraph docker {
+&quot;d82cbacda43a&quot; -&gt; &quot;074be284591f&quot;
+&quot;1496068ca813&quot; -&gt; &quot;08306dc45919&quot;
+&quot;08306dc45919&quot; -&gt; &quot;0e7893146ac2&quot;
+&quot;b750fe79269d&quot; -&gt; &quot;1496068ca813&quot;
+base -&gt; &quot;27cf78414709&quot; [style=invis]
+&quot;f71189fff3de&quot; -&gt; &quot;9a33b36209ed&quot;
+&quot;27cf78414709&quot; -&gt; &quot;b750fe79269d&quot;
+&quot;0e7893146ac2&quot; -&gt; &quot;d6434d954665&quot;
+&quot;d6434d954665&quot; -&gt; &quot;d82cbacda43a&quot;
+base -&gt; &quot;e9aa60c60128&quot; [style=invis]
+&quot;074be284591f&quot; -&gt; &quot;f71189fff3de&quot;
+&quot;b750fe79269d&quot; [label=&quot;b750fe79269d\nbase&quot;,shape=box,fillcolor=&quot;paleturquoise&quot;,style=&quot;filled,rounded&quot;];
+&quot;e9aa60c60128&quot; [label=&quot;e9aa60c60128\nbase2&quot;,shape=box,fillcolor=&quot;paleturquoise&quot;,style=&quot;filled,rounded&quot;];
+&quot;9a33b36209ed&quot; [label=&quot;9a33b36209ed\ntest&quot;,shape=box,fillcolor=&quot;paleturquoise&quot;,style=&quot;filled,rounded&quot;];
+base [style=invisible]
+}
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Query Parameters:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><ul class="first simple">
+<li><strong>all</strong> &#8211; 1/True/true or 0/False/false, Show all containers. Only running containers are shown by default</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>200</strong> &#8211; no error</li>
+<li><strong>400</strong> &#8211; bad parameter</li>
+<li><strong>500</strong> &#8211; server error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="create-an-image">
+<h4><a class="toc-backref" href="#id19">Create an image</a></h4>
+<dl class="post">
+<dt id="post--images-create">
+<tt class="descname">POST </tt><tt class="descname">/images/create</tt></dt>
+<dd><p>Create an image, either by pull it from the registry or by importing it</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="nf">POST</span> <span class="nn">/images/create?fromImage=base</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/vnd.docker.raw-stream</span>
+
+{{ STREAM }}
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Query Parameters:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><ul class="first simple">
+<li><strong>fromImage</strong> &#8211; name of the image to pull</li>
+<li><strong>fromSrc</strong> &#8211; source to import, - means stdin</li>
+<li><strong>repo</strong> &#8211; repository</li>
+<li><strong>tag</strong> &#8211; tag</li>
+<li><strong>registry</strong> &#8211; the registry to pull from</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>200</strong> &#8211; no error</li>
+<li><strong>500</strong> &#8211; server error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="insert-a-file-in-a-image">
+<h4><a class="toc-backref" href="#id20">Insert a file in a image</a></h4>
+<dl class="post">
+<dt id="post--images-(name)-insert">
+<tt class="descname">POST </tt><tt class="descname">/images/</tt><big>(</big><em>name</em><big>)</big><tt class="descname">/insert</tt></dt>
+<dd><p>Insert a file from <tt class="docutils literal"><span class="pre">url</span></tt> in the image <tt class="docutils literal"><span class="pre">name</span></tt> at <tt class="docutils literal"><span class="pre">path</span></tt></p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="nf">POST</span> <span class="nn">/images/test/insert?path=/usr&amp;url=myurl</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+
+{{ STREAM }}
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>200</strong> &#8211; no error</li>
+<li><strong>500</strong> &#8211; server error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="inspect-an-image">
+<h4><a class="toc-backref" href="#id21">Inspect an image</a></h4>
+<dl class="get">
+<dt id="get--images-(name)-json">
+<tt class="descname">GET </tt><tt class="descname">/images/</tt><big>(</big><em>name</em><big>)</big><tt class="descname">/json</tt></dt>
+<dd><p>Return low-level information on the image <tt class="docutils literal"><span class="pre">name</span></tt></p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="nf">GET</span> <span class="nn">/images/base/json</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">{</span>
+     <span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;b750fe79269d2ec9a3c593ef05b4332b1d1a02a62b4accb2c21d589ff2f5f2dc&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;parent&quot;</span><span class="p">:</span><span class="s2">&quot;27cf784147099545&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;created&quot;</span><span class="p">:</span><span class="s2">&quot;2013-03-23T22:24:18.818426-07:00&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;container&quot;</span><span class="p">:</span><span class="s2">&quot;3d67245a8d72ecf13f33dffac9f79dcdf70f75acb84d308770391510e0c23ad0&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;container_config&quot;</span><span class="p">:</span>
+             <span class="p">{</span>
+                     <span class="nt">&quot;Hostname&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;User&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;Memory&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+                     <span class="nt">&quot;MemorySwap&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+                     <span class="nt">&quot;AttachStdin&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+                     <span class="nt">&quot;AttachStdout&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+                     <span class="nt">&quot;AttachStderr&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+                     <span class="nt">&quot;PortSpecs&quot;</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;Tty&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+                     <span class="nt">&quot;OpenStdin&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+                     <span class="nt">&quot;StdinOnce&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+                     <span class="nt">&quot;Env&quot;</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;Cmd&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;/bin/bash&quot;</span><span class="p">]</span>
+                     <span class="p">,</span><span class="nt">&quot;Dns&quot;</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;Image&quot;</span><span class="p">:</span><span class="s2">&quot;base&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;Volumes&quot;</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span>
+                     <span class="nt">&quot;VolumesFrom&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span>
+             <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>200</strong> &#8211; no error</li>
+<li><strong>404</strong> &#8211; no such image</li>
+<li><strong>500</strong> &#8211; server error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="get-the-history-of-an-image">
+<h4><a class="toc-backref" href="#id22">Get the history of an image</a></h4>
+<dl class="get">
+<dt id="get--images-(name)-history">
+<tt class="descname">GET </tt><tt class="descname">/images/</tt><big>(</big><em>name</em><big>)</big><tt class="descname">/history</tt></dt>
+<dd><p>Return the history of the image <tt class="docutils literal"><span class="pre">name</span></tt></p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="nf">GET</span> <span class="nn">/images/base/history</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">[</span>
+     <span class="p">{</span>
+             <span class="nt">&quot;Id&quot;</span><span class="p">:</span><span class="s2">&quot;b750fe79269d&quot;</span><span class="p">,</span>
+             <span class="nt">&quot;Created&quot;</span><span class="p">:</span><span class="mi">1364102658</span><span class="p">,</span>
+             <span class="nt">&quot;CreatedBy&quot;</span><span class="p">:</span><span class="s2">&quot;/bin/bash&quot;</span>
+     <span class="p">},</span>
+     <span class="p">{</span>
+             <span class="nt">&quot;Id&quot;</span><span class="p">:</span><span class="s2">&quot;27cf78414709&quot;</span><span class="p">,</span>
+             <span class="nt">&quot;Created&quot;</span><span class="p">:</span><span class="mi">1364068391</span><span class="p">,</span>
+             <span class="nt">&quot;CreatedBy&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span>
+     <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>200</strong> &#8211; no error</li>
+<li><strong>404</strong> &#8211; no such image</li>
+<li><strong>500</strong> &#8211; server error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="push-an-image-on-the-registry">
+<h4><a class="toc-backref" href="#id23">Push an image on the registry</a></h4>
+<dl class="post">
+<dt id="post--images-(name)-push">
+<tt class="descname">POST </tt><tt class="descname">/images/</tt><big>(</big><em>name</em><big>)</big><tt class="descname">/push</tt></dt>
+<dd><p>Push the image <tt class="docutils literal"><span class="pre">name</span></tt> on the registry</p>
+<blockquote>
+<div><p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="nf">POST</span> <span class="nn">/images/test/push</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+</div></blockquote>
+<div class="highlight-http"><div class="highlight"><pre><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/vnd.docker.raw-stream</span>
+
+{{ STREAM }}
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Query Parameters:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><ul class="first simple">
+<li><strong>registry</strong> &#8211; the registry you wan to push, optional</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>200</strong> &#8211; no error</li>
+<li><strong>404</strong> &#8211; no such image</li>
+<li><strong>500</strong> &#8211; server error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="tag-an-image-into-a-repository">
+<h4><a class="toc-backref" href="#id24">Tag an image into a repository</a></h4>
+<dl class="post">
+<dt id="post--images-(name)-tag">
+<tt class="descname">POST </tt><tt class="descname">/images/</tt><big>(</big><em>name</em><big>)</big><tt class="descname">/tag</tt></dt>
+<dd><p>Tag the image <tt class="docutils literal"><span class="pre">name</span></tt> into a repository</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="nf">POST</span> <span class="nn">/images/test/tag?repo=myrepo&amp;force=0</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Query Parameters:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><ul class="first simple">
+<li><strong>repo</strong> &#8211; The repository to tag in</li>
+<li><strong>force</strong> &#8211; 1/True/true or 0/False/false, default false</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>200</strong> &#8211; no error</li>
+<li><strong>400</strong> &#8211; bad parameter</li>
+<li><strong>404</strong> &#8211; no such image</li>
+<li><strong>500</strong> &#8211; server error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="remove-an-image">
+<h4><a class="toc-backref" href="#id25">Remove an image</a></h4>
+<dl class="delete">
+<dt id="delete--images-(name)">
+<tt class="descname">DELETE </tt><tt class="descname">/images/</tt><big>(</big><em>name</em><big>)</big></dt>
+<dd><p>Remove the image <tt class="docutils literal"><span class="pre">name</span></tt> from the filesystem</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="nf">DELETE</span> <span class="nn">/images/test</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">204</span> <span class="ne">OK</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>204</strong> &#8211; no error</li>
+<li><strong>404</strong> &#8211; no such image</li>
+<li><strong>500</strong> &#8211; server error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="search-images">
+<h4><a class="toc-backref" href="#id26">Search images</a></h4>
+<dl class="get">
+<dt id="get--images-search">
+<tt class="descname">GET </tt><tt class="descname">/images/search</tt></dt>
+<dd><p>Search for an image in the docker index</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="nf">GET</span> <span class="nn">/images/search?term=sshd</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><pre>HTTP/1.1 200 OK
+Content-Type: application/json
+
+[
+     {
+             "Name":"cespare/sshd",
+             "Description":""
+     },
+     {
+             "Name":"johnfuller/sshd",
+             "Description":""
+     },
+     {
+             "Name":"dhrp/mongodb-sshd",
+             "Description":""
+     }
+]
+
+:query term: term to search
+:statuscode 200: no error
+:statuscode 500: server error</pre>
+</div>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="misc">
+<h3><a class="toc-backref" href="#id27">2.3 Misc</a></h3>
+<div class="section" id="build-an-image-from-dockerfile-via-stdin">
+<h4><a class="toc-backref" href="#id28">Build an image from Dockerfile via stdin</a></h4>
+<dl class="post">
+<dt id="post--build">
+<tt class="descname">POST </tt><tt class="descname">/build</tt></dt>
+<dd><p>Build an image from Dockerfile via stdin</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><pre>POST /build HTTP/1.1
+
+{{ STREAM }}</pre>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><pre>HTTP/1.1 200 OK
+
+{{ STREAM }}</pre>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Query Parameters:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><ul class="first simple">
+<li><strong>t</strong> &#8211; tag to be applied to the resulting image in case of success</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>200</strong> &#8211; no error</li>
+<li><strong>500</strong> &#8211; server error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="get-default-username-and-email">
+<h4><a class="toc-backref" href="#id29">Get default username and email</a></h4>
+<dl class="get">
+<dt id="get--auth">
+<tt class="descname">GET </tt><tt class="descname">/auth</tt></dt>
+<dd><p>Get the default username and email</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="nf">GET</span> <span class="nn">/auth</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">{</span>
+     <span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="s2">&quot;hannibal&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="s2">&quot;hannibal@a-team.com&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>200</strong> &#8211; no error</li>
+<li><strong>500</strong> &#8211; server error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="check-auth-configuration-and-store-it">
+<h4><a class="toc-backref" href="#id30">Check auth configuration and store it</a></h4>
+<dl class="post">
+<dt id="post--auth">
+<tt class="descname">POST </tt><tt class="descname">/auth</tt></dt>
+<dd><p>Get the default username and email</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><pre>POST /auth HTTP/1.1
+Content-Type: application/json
+
+{
+     "username":"hannibal",
+     "password:"xxxx",
+     "email":"hannibal@a-team.com"
+}</pre>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>200</strong> &#8211; no error</li>
+<li><strong>204</strong> &#8211; no error</li>
+<li><strong>500</strong> &#8211; server error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="display-system-wide-information">
+<h4><a class="toc-backref" href="#id31">Display system-wide information</a></h4>
+<dl class="get">
+<dt id="get--info">
+<tt class="descname">GET </tt><tt class="descname">/info</tt></dt>
+<dd><p>Display system-wide information</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="nf">GET</span> <span class="nn">/info</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">{</span>
+     <span class="nt">&quot;Containers&quot;</span><span class="p">:</span><span class="mi">11</span><span class="p">,</span>
+     <span class="nt">&quot;Images&quot;</span><span class="p">:</span><span class="mi">16</span><span class="p">,</span>
+     <span class="nt">&quot;Debug&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+     <span class="nt">&quot;NFd&quot;</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span>
+     <span class="nt">&quot;NGoroutines&quot;</span><span class="p">:</span><span class="mi">21</span><span class="p">,</span>
+     <span class="nt">&quot;MemoryLimit&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+     <span class="nt">&quot;SwapLimit&quot;</span><span class="p">:</span><span class="kc">false</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>200</strong> &#8211; no error</li>
+<li><strong>500</strong> &#8211; server error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="show-the-docker-version-information">
+<h4><a class="toc-backref" href="#id32">Show the docker version information</a></h4>
+<dl class="get">
+<dt id="get--version">
+<tt class="descname">GET </tt><tt class="descname">/version</tt></dt>
+<dd><p>Show the docker version information</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="nf">GET</span> <span class="nn">/version</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">{</span>
+     <span class="nt">&quot;Version&quot;</span><span class="p">:</span><span class="s2">&quot;0.2.2&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;GitCommit&quot;</span><span class="p">:</span><span class="s2">&quot;5a2a5cc+CHANGES&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;GoVersion&quot;</span><span class="p">:</span><span class="s2">&quot;go1.0.3&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>200</strong> &#8211; no error</li>
+<li><strong>500</strong> &#8211; server error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="create-a-new-image-from-a-container-s-changes">
+<h4><a class="toc-backref" href="#id33">Create a new image from a container&#8217;s changes</a></h4>
+<dl class="post">
+<dt id="post--commit">
+<tt class="descname">POST </tt><tt class="descname">/commit</tt></dt>
+<dd><p>Create a new image from a container&#8217;s changes</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="nf">POST</span> <span class="nn">/commit?container=44c004db4b17&amp;m=message&amp;repo=myrepo</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">201</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/vnd.docker.raw-stream</span>
+
+{&quot;Id&quot;:&quot;596069db4bf5&quot;}
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Query Parameters:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><ul class="first simple">
+<li><strong>container</strong> &#8211; source container</li>
+<li><strong>repo</strong> &#8211; repository</li>
+<li><strong>tag</strong> &#8211; tag</li>
+<li><strong>m</strong> &#8211; commit message</li>
+<li><strong>author</strong> &#8211; author (eg. &#8220;John Hannibal Smith &lt;<a class="reference external" href="mailto:hannibal&#37;&#52;&#48;a-team&#46;com">hannibal<span>&#64;</span>a-team<span>&#46;</span>com</a>&gt;&#8221;)</li>
+<li><strong>run</strong> &#8211; config automatically applied when the image is run. (ex: {&#8220;Cmd&#8221;: [&#8220;cat&#8221;, &#8220;/world&#8221;], &#8220;PortSpecs&#8221;:[&#8220;22&#8221;]})</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>201</strong> &#8211; no error</li>
+<li><strong>404</strong> &#8211; no such container</li>
+<li><strong>500</strong> &#8211; server error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+</div>
+<div class="section" id="going-further">
+<h2><a class="toc-backref" href="#id34">3. Going further</a></h2>
+<div class="section" id="inside-docker-run">
+<h3><a class="toc-backref" href="#id35">3.1 Inside &#8216;docker run&#8217;</a></h3>
+<p>Here are the steps of &#8216;docker run&#8217; :</p>
+<ul>
+<li><p class="first">Create the container</p>
+</li>
+<li><dl class="first docutils">
+<dt>If the status code is 404, it means the image doesn&#8217;t exists:</dt>
+<dd><ul class="first last simple">
+<li>Try to pull it</li>
+<li>Then retry to create the container</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">Start the container</p>
+</li>
+<li><dl class="first docutils">
+<dt>If you are not in detached mode:</dt>
+<dd><ul class="first last simple">
+<li>Attach to the container, using logs=1 (to have stdout and stderr from the container&#8217;s start) and stream=1</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>If in detached mode or only stdin is attached:</dt>
+<dd><ul class="first last simple">
+<li>Display the container&#8217;s id</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="hijacking">
+<h3><a class="toc-backref" href="#id36">3.2 Hijacking</a></h3>
+<p>In this first version of the API, some of the endpoints, like /attach, /pull or /push uses hijacking to transport stdin,
+stdout and stderr on the same socket. This might change in the future.</p>
+</div>
+</div>
+</div>
+
+
+            </section>
+
+        </div>
+    </div>
+</div>
+
+<div id="footer" class="container" >
+    <div class="row">
+
+        <div class="span12 footer">
+            <div class="tbox textright forceleftmargin social links pull-right">
+                <a class="twitter" href="http://twitter.com/getdocker">Twitter</a>
+                <a class="github" href="https://github.com/dotcloud/docker/">GitHub</a>
+            </div>
+
+            Docker is a project by <a href="http://www.dotcloud.com">dotCloud</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+</div>
+
+
+  <!-- script which should be loaded after everything else -->
+<script type="text/javascript">
+
+    // Function to make the sticky header possible
+    var shiftWindow = function() {
+        scrollBy(0, -70);
+        console.log("window shifted")
+    };
+    window.addEventListener("hashchange", shiftWindow);
+
+    function loadShift() {
+        if (window.location.hash) {
+            console.log("window has hash");
+            shiftWindow();
+        }
+    }
+
+    $(window).load(function() {
+        loadShift();
+        console.log("late loadshift");
+    });
+
+    $(function(){
+
+        // sidebar accordian-ing
+        // don't apply on last object (it should be the FAQ)
+
+        // define an array to which all opened items should be added
+        var openmenus = [];
+
+        var elements = $('.toctree-l2');
+        for (var i = 0; i < elements.length; i += 1) { var current = $(elements[i]); current.children('ul').hide();}
+
+
+        // set initial collapsed state
+        var elements = $('.toctree-l1');
+        for (var i = 0; i < elements.length; i += 1) {
+            var current = $(elements[i]);
+            if (current.hasClass('current')) {
+
+                currentlink = current.children('a')[0].href;
+                openmenus.push(currentlink);
+
+                // do nothing
+            } else {
+                // collapse children
+                current.children('ul').hide();
+            }
+        }
+
+        // attached handler on click
+        $('.sidebar > ul > li > a').not(':last').click(function(){
+
+            var index = $.inArray(this.href, openmenus)
+
+            if (index > -1) {
+                console.log(index);
+                openmenus.splice(index, 1);
+
+
+                $(this).parent().children('ul').slideUp(200, function() {
+                    // $(this).parent().removeClass('current'); // toggle after effect
+                });
+            }
+            else {
+                openmenus.push(this.href);
+                console.log(this);
+
+                var current = $(this);
+
+                setTimeout(function() {
+                    $('.sidebar > ul > li').removeClass('current');
+                    current.parent().addClass('current'); // toggle before effect
+                    current.parent().children('ul').hide();
+                    current.parent().children('ul').slideDown(200);
+                }, 100);
+            }
+            return false;
+        });
+
+    });
+</script>
+
+    <!-- Google analytics -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-6096819-11']);
+        _gaq.push(['_setDomainName', 'docker.io']);
+        _gaq.push(['_setAllowLinker', true]);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+
+</body>
+</html>

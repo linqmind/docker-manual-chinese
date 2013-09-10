@@ -1,0 +1,496 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="google-site-verification" content="UxV66EKuPe87dgnH1sbrldrx6VsoWMrx5NjwkgUFxXI" />
+
+    <title>Kernel Requirements - Docker Documentation</title>
+
+    <meta name="description" content="Kernel supports" />
+    <meta name="keywords" content="kernel requirements, kernel support, docker, installation, cgroups, namespaces" />
+
+    <script type="text/javascript">
+        // This is probably used by the search engine
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:    '../../',
+            VERSION:     '0',
+            COLLAPSE_INDEX: false,
+            FILE_SUFFIX: '',
+            HAS_SOURCE:  true
+        };
+    </script>
+    <link rel="stylesheet" href="../../_static/css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/bootstrap-responsive.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/main.css" type="text/css" />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/docs.js"></script>
+
+</head>
+
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-dotcloud">
+        <div class="container" style="text-align: center;">
+
+            <div style="float: right" class="pull-right">
+                <ul class="nav">
+                    <li id="nav-introduction"><a href="http://www.docker.io/">Introduction</a></li>
+                    <li id="nav-gettingstarted"><a href="http://www.docker.io/gettingstarted/">Getting started</a></li>
+                    <li id="nav-documentation" class="active"><a href="http://docs.docker.io/en/latest/">Documentation</a></li>
+                    <li id="nav-blog"><a href="http://blog.docker.io/">Blog</a></li>
+                </ul>
+                <!--<div class="social links" style="float: right; margin-top: 14px; margin-left: 12px">-->
+                    <!--<a class="twitter" href="http://twitter.com/getdocker">Twitter</a>-->
+                    <!--<a class="github" href="https://github.com/dotcloud/docker/">GitHub</a>-->
+                <!--</div>-->
+            </div>
+
+            <div style="margin-left: -12px; float: left;">
+                <a href="http://www.docker.io"><img style="margin-top: 12px; height: 38px" src="../../_static/img/docker-letters-logo.gif"></a>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="span12 titlebar">
+            <!--<span class="pull-right" style="margin-left: 20px; font-size: 20px">0.1</span>-->
+            <div class="pull-right" id="fork-us" style="margin-top: 16px; margin-right: 16px;">
+                <a  href="http://github.com/dotcloud/docker/"><img src="../../_static/img/fork-us.png"> Fork us on Github</a>
+            </div>
+            <h1 class="pageheader">DOCUMENTATION</h1>
+
+        </div>
+    </div>
+
+</div>
+
+<div class="container">
+
+    <!-- Docs nav
+     ================================================== -->
+    <div class="row" style="position: relative">
+        <div class="span3" style="height:100%;" >
+
+        </div>
+
+        <div class="span3 sidebar bs-docs-sidebar" style="position: absolute">
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../concepts/">Concepts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../">Introduction</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">Installation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ubuntulinux/">Ubuntu Linux</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../binaries/">Binaries</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../vagrant/">Using Vagrant (Mac, Linux)</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../windows/">Using Vagrant (Windows)</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../amazon/">Amazon EC2</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../rackspace/">Rackspace Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../archlinux/">Arch Linux</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../upgrading/">Upgrading</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Kernel Requirements</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../use/">Use</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../use/basics/">The Basics</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../use/workingwithrepository/">Working with the Repository</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../use/builder/">Docker Builder</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../use/puppet/">Using Puppet</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/running_examples/">Running the Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/hello_world/">Hello World</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/hello_world_daemon/">Hello World Daemon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/python_web_app/">Python Web App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/nodejs_web_app/">Node.js Web App</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/running_redis_service/">Redis Service</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/running_ssh_service/">SSH Daemon Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/couchdb_data_volumes/">CouchDB Service</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../commandline/">Commands</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../commandline/cli/">Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../commandline/command/attach/"><tt class="docutils literal"><span class="pre">attach</span></tt> &#8211; Attach to a running container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../commandline/command/build/"><tt class="docutils literal"><span class="pre">build</span></tt> &#8211; Build a container from a Dockerfile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../commandline/command/commit/"><tt class="docutils literal"><span class="pre">commit</span></tt> &#8211; Create a new image from a container&#8217;s changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../commandline/command/diff/"><tt class="docutils literal"><span class="pre">diff</span></tt> &#8211; Inspect changes on a container&#8217;s filesystem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../commandline/command/export/"><tt class="docutils literal"><span class="pre">export</span></tt> &#8211; Stream the contents of a container as a tar archive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../commandline/command/history/"><tt class="docutils literal"><span class="pre">history</span></tt> &#8211; Show the history of an image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../commandline/command/images/"><tt class="docutils literal"><span class="pre">images</span></tt> &#8211; List images</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../commandline/command/import/"><tt class="docutils literal"><span class="pre">import</span></tt> &#8211; Create a new filesystem image from the contents of a tarball</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../commandline/command/info/"><tt class="docutils literal"><span class="pre">info</span></tt> &#8211; Display system-wide information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../commandline/command/inspect/"><tt class="docutils literal"><span class="pre">inspect</span></tt> &#8211; Return low-level information on a container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../commandline/command/kill/"><tt class="docutils literal"><span class="pre">kill</span></tt> &#8211; Kill a running container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../commandline/command/login/"><tt class="docutils literal"><span class="pre">login</span></tt> &#8211; Register or Login to the docker registry server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../commandline/command/logs/"><tt class="docutils literal"><span class="pre">logs</span></tt> &#8211; Fetch the logs of a container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../commandline/command/port/"><tt class="docutils literal"><span class="pre">port</span></tt> &#8211; Lookup the public-facing port which is NAT-ed to PRIVATE_PORT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../commandline/command/ps/"><tt class="docutils literal"><span class="pre">ps</span></tt> &#8211; List containers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../commandline/command/pull/"><tt class="docutils literal"><span class="pre">pull</span></tt> &#8211; Pull an image or a repository from the docker registry server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../commandline/command/push/"><tt class="docutils literal"><span class="pre">push</span></tt> &#8211; Push an image or a repository to the docker registry server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../commandline/command/restart/"><tt class="docutils literal"><span class="pre">restart</span></tt> &#8211; Restart a running container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../commandline/command/rm/"><tt class="docutils literal"><span class="pre">rm</span></tt> &#8211; Remove a container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../commandline/command/rmi/"><tt class="docutils literal"><span class="pre">rmi</span></tt> &#8211; Remove an image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../commandline/command/run/"><tt class="docutils literal"><span class="pre">run</span></tt> &#8211; Run a command in a new container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../commandline/command/search/"><tt class="docutils literal"><span class="pre">search</span></tt> &#8211; Search for an image in the docker index</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../commandline/command/start/"><tt class="docutils literal"><span class="pre">start</span></tt> &#8211; Start a stopped container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../commandline/command/stop/"><tt class="docutils literal"><span class="pre">stop</span></tt> &#8211; Stop a running container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../commandline/command/tag/"><tt class="docutils literal"><span class="pre">tag</span></tt> &#8211; Tag an image into a repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../commandline/command/version/"><tt class="docutils literal"><span class="pre">version</span></tt> &#8211; Show the docker version information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../commandline/command/wait/"><tt class="docutils literal"><span class="pre">wait</span></tt> &#8211; Block until a container stops, then print its exit code</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../commandline/command/attach/">attach</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../commandline/command/build/">build</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../commandline/command/commit/">commit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../commandline/command/diff/">diff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../commandline/command/export/">export</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../commandline/command/history/">history</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../commandline/command/images/">images</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../commandline/command/import/">import</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../commandline/command/info/">info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../commandline/command/inspect/">inspect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../commandline/command/kill/">kill</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../commandline/command/login/">login</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../commandline/command/logs/">logs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../commandline/command/port/">port</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../commandline/command/ps/">ps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../commandline/command/pull/">pull</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../commandline/command/push/">push</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../commandline/command/restart/">restart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../commandline/command/rm/">rm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../commandline/command/rmi/">rmi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../commandline/command/run/">run</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../commandline/command/search/">search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../commandline/command/start/">start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../commandline/command/stop/">stop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../commandline/command/tag/">tag</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../commandline/command/version/">version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../commandline/command/wait/">wait</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/contributing/">Contributing to Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/devenvironment/">Setting Up a Dev Environment</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">APIs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../api/registry_api/">Docker Registry API</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/index_search_api/">Docker Index Search API</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/docker_remote_api/">Docker Remote API</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq/">FAQ</a><ul class="simple">
+</ul>
+</li>
+</ul>
+
+        </div>
+
+        <!-- body block -->
+        <div class="span9">
+
+            <!-- Main section
+            ================================================== -->
+            <section id="global" class="containerblock">
+                
+  <div class="section" id="kernel-requirements">
+<span id="kernel"></span><h1>Kernel Requirements</h1>
+<p>In short, Docker has the following kernel requirements:</p>
+<ul>
+<li><p class="first">Linux version 3.8 or above.</p>
+</li>
+<li><p class="first"><a class="reference external" href="http://aufs.sourceforge.net/">AUFS support</a>.</p>
+</li>
+<li><p class="first">Cgroups and namespaces must be enabled.</p>
+<p>The officially supported kernel is the one recommended by the
+<a class="reference internal" href="../ubuntulinux/#ubuntu-linux"><em>Ubuntu Linux</em></a> installation path. It is the one that most developers
+will use, and the one that receives the most attention from the core
+contributors. If you decide to go with a different kernel and hit a bug,
+please try to reproduce it with the official kernels first.</p>
+</li>
+</ul>
+<p>If you cannot or do not want to use the &#8220;official&#8221; kernels,
+here is some technical background about the features (both optional and
+mandatory) that docker needs to run successfully.</p>
+<div class="section" id="linux-version-3-8-or-above">
+<h2>Linux version 3.8 or above</h2>
+<p>Kernel versions 3.2 to 3.5 are not stable when used with docker.
+In some circumstances, you will experience kernel &#8220;oopses&#8221;, or even crashes.
+The symptoms include:</p>
+<ul class="simple">
+<li>a container being killed in the middle of an operation (e.g. an <tt class="docutils literal"><span class="pre">apt-get</span></tt>
+command doesn&#8217;t complete);</li>
+<li>kernel messages including mentioning calls to <tt class="docutils literal"><span class="pre">mntput</span></tt> or
+<tt class="docutils literal"><span class="pre">d_hash_and_lookup</span></tt>;</li>
+<li>kernel crash causing the machine to freeze for a few minutes, or even
+completely.</li>
+</ul>
+<p>While it is still possible to use older kernels for development, it is
+really not advised to do so.</p>
+<p>Docker checks the kernel version when it starts, and emits a warning if it
+detects something older than 3.8.</p>
+<p>See issue <a class="reference external" href="https://github.com/dotcloud/docker/issues/407">#407</a> for details.</p>
+</div>
+<div class="section" id="id2">
+<h2>AUFS support</h2>
+<p>Docker currently relies on AUFS, an unioning filesystem.
+While AUFS is included in the kernels built by the Debian and Ubuntu
+distributions, is not part of the standard kernel. This means that if
+you decide to roll your own kernel, you will have to patch your
+kernel tree to add AUFS. The process is documented on
+<a class="reference external" href="http://aufs.sourceforge.net/">AUFS webpage</a>.</p>
+</div>
+<div class="section" id="cgroups-and-namespaces">
+<h2>Cgroups and namespaces</h2>
+<p>You need to enable namespaces and cgroups, to the extend of what is needed
+to run LXC containers. Technically, while namespaces have been introduced
+in the early 2.6 kernels, we do not advise to try any kernel before 2.6.32
+to run LXC containers. Note that 2.6.32 has some documented issues regarding
+network namespace setup and teardown; those issues are not a risk if you
+run containers in a private environment, but can lead to denial-of-service
+attacks if you want to run untrusted code in your containers. For more details,
+see <a class="reference external" href="https://bugs.launchpad.net/ubuntu/+source/linux/+bug/720095">[LP#720095</a>.</p>
+<p>Kernels 2.6.38, and every version since 3.2, have been deployed successfully
+to run containerized production workloads. Feature-wise, there is no huge
+improvement between 2.6.38 and up to 3.6 (as far as docker is concerned!).</p>
+</div>
+<div class="section" id="extra-cgroup-controllers">
+<h2>Extra Cgroup Controllers</h2>
+<p>Most control groups can be enabled or disabled individually. For instance,
+you can decide that you do not want to compile support for the CPU or memory
+controller. In some cases, the feature can be enabled or disabled at boot
+time. It is worth mentioning that some distributions (like Debian) disable
+&#8220;expensive&#8221; features, like the memory controller, because they can have
+a significant performance impact.</p>
+<p>In the specific case of the memory cgroup, docker will detect if the cgroup
+is available or not. If it&#8217;s not, it will print a warning, and it won&#8217;t
+use the feature. If you want to enable that feature &#8211; read on!</p>
+</div>
+<div class="section" id="memory-and-swap-accounting-on-debian-ubuntu">
+<h2>Memory and Swap Accounting on Debian/Ubuntu</h2>
+<p>If you use Debian or Ubuntu kernels, and want to enable memory and swap
+accounting, you must add the following command-line parameters to your kernel:</p>
+<div class="highlight-python"><pre>cgroup_enable=memory swapaccount</pre>
+</div>
+<p>On Debian or Ubuntu systems, if you use the default GRUB bootloader, you can
+add those parameters by editing <tt class="docutils literal"><span class="pre">/etc/default/grub</span></tt> and extending
+<tt class="docutils literal"><span class="pre">GRUB_CMDLINE_LINUX</span></tt>. Look for the following line:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">GRUB_CMDLINE_LINUX</span><span class="o">=</span><span class="s">&quot;&quot;</span>
+</pre></div>
+</div>
+<p>And replace it by the following one:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">GRUB_CMDLINE_LINUX</span><span class="o">=</span><span class="s">&quot;cgroup_enable=memory swapaccount&quot;</span>
+</pre></div>
+</div>
+<p>Then run <tt class="docutils literal"><span class="pre">update-grub</span></tt>, and reboot.</p>
+</div>
+</div>
+
+
+            </section>
+
+        </div>
+    </div>
+</div>
+
+<div id="footer" class="container" >
+    <div class="row">
+
+        <div class="span12 footer">
+            <div class="tbox textright forceleftmargin social links pull-right">
+                <a class="twitter" href="http://twitter.com/getdocker">Twitter</a>
+                <a class="github" href="https://github.com/dotcloud/docker/">GitHub</a>
+            </div>
+
+            Docker is a project by <a href="http://www.dotcloud.com">dotCloud</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+</div>
+
+
+  <!-- script which should be loaded after everything else -->
+<script type="text/javascript">
+
+    // Function to make the sticky header possible
+    var shiftWindow = function() {
+        scrollBy(0, -70);
+        console.log("window shifted")
+    };
+    window.addEventListener("hashchange", shiftWindow);
+
+    function loadShift() {
+        if (window.location.hash) {
+            console.log("window has hash");
+            shiftWindow();
+        }
+    }
+
+    $(window).load(function() {
+        loadShift();
+        console.log("late loadshift");
+    });
+
+    $(function(){
+
+        // sidebar accordian-ing
+        // don't apply on last object (it should be the FAQ)
+
+        // define an array to which all opened items should be added
+        var openmenus = [];
+
+        var elements = $('.toctree-l2');
+        for (var i = 0; i < elements.length; i += 1) { var current = $(elements[i]); current.children('ul').hide();}
+
+
+        // set initial collapsed state
+        var elements = $('.toctree-l1');
+        for (var i = 0; i < elements.length; i += 1) {
+            var current = $(elements[i]);
+            if (current.hasClass('current')) {
+
+                currentlink = current.children('a')[0].href;
+                openmenus.push(currentlink);
+
+                // do nothing
+            } else {
+                // collapse children
+                current.children('ul').hide();
+            }
+        }
+
+        // attached handler on click
+        $('.sidebar > ul > li > a').not(':last').click(function(){
+
+            var index = $.inArray(this.href, openmenus)
+
+            if (index > -1) {
+                console.log(index);
+                openmenus.splice(index, 1);
+
+
+                $(this).parent().children('ul').slideUp(200, function() {
+                    // $(this).parent().removeClass('current'); // toggle after effect
+                });
+            }
+            else {
+                openmenus.push(this.href);
+                console.log(this);
+
+                var current = $(this);
+
+                setTimeout(function() {
+                    $('.sidebar > ul > li').removeClass('current');
+                    current.parent().addClass('current'); // toggle before effect
+                    current.parent().children('ul').hide();
+                    current.parent().children('ul').slideDown(200);
+                }, 100);
+            }
+            return false;
+        });
+
+    });
+</script>
+
+    <!-- Google analytics -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-6096819-11']);
+        _gaq.push(['_setDomainName', 'docker.io']);
+        _gaq.push(['_setAllowLinker', true]);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+
+</body>
+</html>
