@@ -1,0 +1,509 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="google-site-verification" content="UxV66EKuPe87dgnH1sbrldrx6VsoWMrx5NjwkgUFxXI" />
+
+    <title>Introduction - Docker Documentation</title>
+
+    <meta name="description" content="An introduction to docker and standard containers?" />
+    <meta name="keywords" content="containers, lxc, concepts, explanation" />
+
+    <script type="text/javascript">
+        // This is probably used by the search engine
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:    '../',
+            VERSION:     '0',
+            COLLAPSE_INDEX: false,
+            FILE_SUFFIX: '.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+    <link rel="stylesheet" href="../_static/css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/bootstrap-responsive.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/main.css" type="text/css" />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/js/docs.js"></script>
+
+</head>
+
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-dotcloud">
+        <div class="container" style="text-align: center;">
+
+            <div style="float: right" class="pull-right">
+                <ul class="nav">
+                    <li id="nav-introduction"><a href="http://www.docker.io/">Introduction</a></li>
+                    <li id="nav-gettingstarted"><a href="http://www.docker.io/gettingstarted/">Getting started</a></li>
+                    <li id="nav-documentation" class="active"><a href="http://docs.docker.io/en/latest/">Documentation</a></li>
+                    <li id="nav-blog"><a href="http://blog.docker.io/">Blog</a></li>
+                </ul>
+                <!--<div class="social links" style="float: right; margin-top: 14px; margin-left: 12px">-->
+                    <!--<a class="twitter" href="http://twitter.com/getdocker">Twitter</a>-->
+                    <!--<a class="github" href="https://github.com/dotcloud/docker/">GitHub</a>-->
+                <!--</div>-->
+            </div>
+
+            <div style="margin-left: -12px; float: left;">
+                <a href="http://www.docker.io"><img style="margin-top: 12px; height: 38px" src="../_static/img/docker-letters-logo.gif"></a>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="span12 titlebar">
+            <!--<span class="pull-right" style="margin-left: 20px; font-size: 20px">0.1</span>-->
+            <div class="pull-right" id="fork-us" style="margin-top: 16px; margin-right: 16px;">
+                <a  href="http://github.com/dotcloud/docker/"><img src="../_static/img/fork-us.png"> Fork us on Github</a>
+            </div>
+            <h1 class="pageheader">DOCUMENTATION</h1>
+
+        </div>
+    </div>
+
+</div>
+
+<div class="container">
+
+    <!-- Docs nav
+     ================================================== -->
+    <div class="row" style="position: relative">
+        <div class="span3" style="height:100%;" >
+
+        </div>
+
+        <div class="span3 sidebar bs-docs-sidebar" style="position: absolute">
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Concepts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../index.html">Introduction</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../installation/ubuntulinux.html">Ubuntu Linux</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/binaries.html">Binaries</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/vagrant.html">Using Vagrant (Mac, Linux)</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/windows.html">Using Vagrant (Windows)</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/amazon.html">Amazon EC2</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/rackspace.html">Rackspace Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/archlinux.html">Arch Linux</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/kernel.html">Kernel Requirements</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../use/index.html">Use</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../use/basics.html">The Basics</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../use/workingwithrepository.html">Working with the Repository</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../use/builder.html">Docker Builder</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../use/puppet.html">Using Puppet</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../examples/running_examples.html">Running the Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/hello_world.html">Hello World</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/hello_world_daemon.html">Hello World Daemon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/python_web_app.html">Python Web App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/nodejs_web_app.html">Node.js Web App</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/running_redis_service.html">Redis Service</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/running_ssh_service.html">SSH Daemon Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/couchdb_data_volumes.html">CouchDB Service</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../commandline/index.html">Commands</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/cli.html">Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/attach.html"><tt class="docutils literal"><span class="pre">attach</span></tt> &#8211; Attach to a running container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/build.html"><tt class="docutils literal"><span class="pre">build</span></tt> &#8211; Build a container from a Dockerfile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/commit.html"><tt class="docutils literal"><span class="pre">commit</span></tt> &#8211; Create a new image from a container&#8217;s changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/diff.html"><tt class="docutils literal"><span class="pre">diff</span></tt> &#8211; Inspect changes on a container&#8217;s filesystem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/export.html"><tt class="docutils literal"><span class="pre">export</span></tt> &#8211; Stream the contents of a container as a tar archive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/history.html"><tt class="docutils literal"><span class="pre">history</span></tt> &#8211; Show the history of an image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/images.html"><tt class="docutils literal"><span class="pre">images</span></tt> &#8211; List images</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/import.html"><tt class="docutils literal"><span class="pre">import</span></tt> &#8211; Create a new filesystem image from the contents of a tarball</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/info.html"><tt class="docutils literal"><span class="pre">info</span></tt> &#8211; Display system-wide information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/inspect.html"><tt class="docutils literal"><span class="pre">inspect</span></tt> &#8211; Return low-level information on a container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/kill.html"><tt class="docutils literal"><span class="pre">kill</span></tt> &#8211; Kill a running container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/login.html"><tt class="docutils literal"><span class="pre">login</span></tt> &#8211; Register or Login to the docker registry server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/logs.html"><tt class="docutils literal"><span class="pre">logs</span></tt> &#8211; Fetch the logs of a container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/port.html"><tt class="docutils literal"><span class="pre">port</span></tt> &#8211; Lookup the public-facing port which is NAT-ed to PRIVATE_PORT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/ps.html"><tt class="docutils literal"><span class="pre">ps</span></tt> &#8211; List containers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/pull.html"><tt class="docutils literal"><span class="pre">pull</span></tt> &#8211; Pull an image or a repository from the docker registry server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/push.html"><tt class="docutils literal"><span class="pre">push</span></tt> &#8211; Push an image or a repository to the docker registry server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/restart.html"><tt class="docutils literal"><span class="pre">restart</span></tt> &#8211; Restart a running container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/rm.html"><tt class="docutils literal"><span class="pre">rm</span></tt> &#8211; Remove a container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/rmi.html"><tt class="docutils literal"><span class="pre">rmi</span></tt> &#8211; Remove an image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/run.html"><tt class="docutils literal"><span class="pre">run</span></tt> &#8211; Run a command in a new container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/search.html"><tt class="docutils literal"><span class="pre">search</span></tt> &#8211; Search for an image in the docker index</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/start.html"><tt class="docutils literal"><span class="pre">start</span></tt> &#8211; Start a stopped container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/stop.html"><tt class="docutils literal"><span class="pre">stop</span></tt> &#8211; Stop a running container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/tag.html"><tt class="docutils literal"><span class="pre">tag</span></tt> &#8211; Tag an image into a repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/version.html"><tt class="docutils literal"><span class="pre">version</span></tt> &#8211; Show the docker version information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/wait.html"><tt class="docutils literal"><span class="pre">wait</span></tt> &#8211; Block until a container stops, then print its exit code</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/attach.html">attach</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/build.html">build</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/commit.html">commit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/diff.html">diff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/export.html">export</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/history.html">history</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/images.html">images</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/import.html">import</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/info.html">info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/inspect.html">inspect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/kill.html">kill</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/login.html">login</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/logs.html">logs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/port.html">port</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/ps.html">ps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/pull.html">pull</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/push.html">push</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/restart.html">restart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/rm.html">rm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/rmi.html">rmi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/run.html">run</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/search.html">search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/start.html">start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/stop.html">stop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/tag.html">tag</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/version.html">version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/wait.html">wait</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/index.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/contributing.html">Contributing to Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/devenvironment.html">Setting Up a Dev Environment</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">APIs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../api/registry_index_spec.html">Registry &amp; index Spec</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/registry_api.html">Docker Registry API</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/index_api.html">Docker Index API</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/docker_remote_api.html">Docker Remote API</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/docker_remote_api.html#docker-remote-api-client-libraries">Docker Remote API Client Libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a><ul class="simple">
+</ul>
+</li>
+</ul>
+
+        </div>
+
+        <!-- body block -->
+        <div class="span9">
+
+            <!-- Main section
+            ================================================== -->
+            <section id="global" class="containerblock">
+                
+  <div class="section" id="introduction">
+<h1>Introduction</h1>
+<div class="section" id="docker-the-linux-container-runtime">
+<h2>Docker &#8211; The Linux container runtime</h2>
+<p>Docker complements LXC with a high-level API which operates at the process level. It runs unix processes with strong guarantees of isolation and repeatability across servers.</p>
+<p>Docker is a great building block for automating distributed systems: large-scale web deployments, database clusters, continuous deployment systems, private PaaS, service-oriented architectures, etc.</p>
+<ul class="simple">
+<li><strong>Heterogeneous payloads</strong> Any combination of binaries, libraries, configuration files, scripts, virtualenvs, jars, gems, tarballs, you name it. No more juggling between domain-specific tools. Docker can deploy and run them all.</li>
+<li><strong>Any server</strong> Docker can run on any x64 machine with a modern linux kernel - whether it&#8217;s a laptop, a bare metal server or a VM. This makes it perfect for multi-cloud deployments.</li>
+<li><strong>Isolation</strong> docker isolates processes from each other and from the underlying host, using lightweight containers.</li>
+<li><strong>Repeatability</strong> Because containers are isolated in their own filesystem, they behave the same regardless of where, when, and alongside what they run.</li>
+</ul>
+<img alt="../_images/lego_docker.jpg" src="../_images/lego_docker.jpg" />
+</div>
+<div class="section" id="what-is-a-standard-container">
+<h2>What is a Standard Container?</h2>
+<p>Docker defines a unit of software delivery called a Standard Container. The goal of a Standard Container is to encapsulate a software component and all its dependencies in
+a format that is self-describing and portable, so that any compliant runtime can run it without extra dependency, regardless of the underlying machine and the contents of the container.</p>
+<p>The spec for Standard Containers is currently work in progress, but it is very straightforward. It mostly defines 1) an image format, 2) a set of standard operations, and 3) an execution environment.</p>
+<p>A great analogy for this is the shipping container. Just like Standard Containers are a fundamental unit of software delivery, shipping containers (<a class="reference external" href="http://bricks.argz.com/ins/7823-1/12">http://bricks.argz.com/ins/7823-1/12</a>) are a fundamental unit of physical delivery.</p>
+<div class="section" id="standard-operations">
+<h3>Standard operations</h3>
+<p>Just like shipping containers, Standard Containers define a set of STANDARD OPERATIONS. Shipping containers can be lifted, stacked, locked, loaded, unloaded and labelled. Similarly, standard containers can be started, stopped, copied, snapshotted, downloaded, uploaded and tagged.</p>
+</div>
+<div class="section" id="content-agnostic">
+<h3>Content-agnostic</h3>
+<p>Just like shipping containers, Standard Containers are CONTENT-AGNOSTIC: all standard operations have the same effect regardless of the contents. A shipping container will be stacked in exactly the same way whether it contains Vietnamese powder coffee or spare Maserati parts. Similarly, Standard Containers are started or uploaded in the same way whether they contain a postgres database, a php application with its dependencies and application server, or Java build artifacts.</p>
+</div>
+<div class="section" id="infrastructure-agnostic">
+<h3>Infrastructure-agnostic</h3>
+<p>Both types of containers are INFRASTRUCTURE-AGNOSTIC: they can be transported to thousands of facilities around the world, and manipulated by a wide variety of equipment. A shipping container can be packed in a factory in Ukraine, transported by truck to the nearest routing center, stacked onto a train, loaded into a German boat by an Australian-built crane, stored in a warehouse at a US facility, etc. Similarly, a standard container can be bundled on my laptop, uploaded to S3, downloaded, run and snapshotted by a build server at Equinix in Virginia, uploaded to 10 staging servers in a home-made Openstack cluster, then sent to 30 production instances across 3 EC2 regions.</p>
+</div>
+<div class="section" id="designed-for-automation">
+<h3>Designed for automation</h3>
+<p>Because they offer the same standard operations regardless of content and infrastructure, Standard Containers, just like their physical counterpart, are extremely well-suited for automation. In fact, you could say automation is their secret weapon.</p>
+<p>Many things that once required time-consuming and error-prone human effort can now be programmed. Before shipping containers, a bag of powder coffee was hauled, dragged, dropped, rolled and stacked by 10 different people in 10 different locations by the time it reached its destination. 1 out of 50 disappeared. 1 out of 20 was damaged. The process was slow, inefficient and cost a fortune - and was entirely different depending on the facility and the type of goods.</p>
+<p>Similarly, before Standard Containers, by the time a software component ran in production, it had been individually built, configured, bundled, documented, patched, vendored, templated, tweaked and instrumented by 10 different people on 10 different computers. Builds failed, libraries conflicted, mirrors crashed, post-it notes were lost, logs were misplaced, cluster updates were half-broken. The process was slow, inefficient and cost a fortune - and was entirely different depending on the language and infrastructure provider.</p>
+</div>
+<div class="section" id="industrial-grade-delivery">
+<h3>Industrial-grade delivery</h3>
+<p>There are 17 million shipping containers in existence, packed with every physical good imaginable. Every single one of them can be loaded on the same boats, by the same cranes, in the same facilities, and sent anywhere in the World with incredible efficiency. It is embarrassing to think that a 30 ton shipment of coffee can safely travel half-way across the World in <em>less time</em> than it takes a software team to deliver its code from one datacenter to another sitting 10 miles away.</p>
+<p>With Standard Containers we can put an end to that embarrassment, by making INDUSTRIAL-GRADE DELIVERY of software a reality.</p>
+</div>
+<div class="section" id="standard-container-specification">
+<h3>Standard Container Specification</h3>
+<p>(TODO)</p>
+</div>
+<div class="section" id="image-format">
+<h3>Image format</h3>
+</div>
+<div class="section" id="id1">
+<h3>Standard operations</h3>
+<ul class="simple">
+<li>Copy</li>
+<li>Run</li>
+<li>Stop</li>
+<li>Wait</li>
+<li>Commit</li>
+<li>Attach standard streams</li>
+<li>List filesystem changes</li>
+<li>...</li>
+</ul>
+</div>
+<div class="section" id="execution-environment">
+<h3>Execution environment</h3>
+<div class="section" id="root-filesystem">
+<h4>Root filesystem</h4>
+</div>
+<div class="section" id="environment-variables">
+<h4>Environment variables</h4>
+</div>
+<div class="section" id="process-arguments">
+<h4>Process arguments</h4>
+</div>
+<div class="section" id="networking">
+<h4>Networking</h4>
+</div>
+<div class="section" id="process-namespacing">
+<h4>Process namespacing</h4>
+</div>
+<div class="section" id="resource-limits">
+<h4>Resource limits</h4>
+</div>
+<div class="section" id="process-monitoring">
+<h4>Process monitoring</h4>
+</div>
+<div class="section" id="logging">
+<h4>Logging</h4>
+</div>
+<div class="section" id="signals">
+<h4>Signals</h4>
+</div>
+<div class="section" id="pseudo-terminal-allocation">
+<h4>Pseudo-terminal allocation</h4>
+</div>
+<div class="section" id="security">
+<h4>Security</h4>
+</div>
+</div>
+</div>
+</div>
+
+
+            </section>
+
+        </div>
+    </div>
+</div>
+
+<div id="footer" class="container" >
+    <div class="row">
+
+        <div class="span12 footer">
+            <div class="tbox textright forceleftmargin social links pull-right">
+                <a class="twitter" href="http://twitter.com/getdocker">Twitter</a>
+                <a class="github" href="https://github.com/dotcloud/docker/">GitHub</a>
+            </div>
+
+            Docker is a project by <a href="http://www.dotcloud.com">dotCloud</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+</div>
+
+
+  <!-- script which should be loaded after everything else -->
+<script type="text/javascript">
+
+    // Function to make the sticky header possible
+    var shiftWindow = function() {
+        scrollBy(0, -70);
+        console.log("window shifted")
+    };
+    window.addEventListener("hashchange", shiftWindow);
+
+    function loadShift() {
+        if (window.location.hash) {
+            console.log("window has hash");
+            shiftWindow();
+        }
+    }
+
+    $(window).load(function() {
+        loadShift();
+        console.log("late loadshift");
+    });
+
+    $(function(){
+
+        // sidebar accordian-ing
+        // don't apply on last object (it should be the FAQ)
+
+        // define an array to which all opened items should be added
+        var openmenus = [];
+
+        var elements = $('.toctree-l2');
+        for (var i = 0; i < elements.length; i += 1) { var current = $(elements[i]); current.children('ul').hide();}
+
+
+        // set initial collapsed state
+        var elements = $('.toctree-l1');
+        for (var i = 0; i < elements.length; i += 1) {
+            var current = $(elements[i]);
+            if (current.hasClass('current')) {
+
+                currentlink = current.children('a')[0].href;
+                openmenus.push(currentlink);
+
+                // do nothing
+            } else {
+                // collapse children
+                current.children('ul').hide();
+            }
+        }
+
+        // attached handler on click
+        $('.sidebar > ul > li > a').not(':last').click(function(){
+
+            var index = $.inArray(this.href, openmenus)
+
+            if (index > -1) {
+                console.log(index);
+                openmenus.splice(index, 1);
+
+
+                $(this).parent().children('ul').slideUp(200, function() {
+                    // $(this).parent().removeClass('current'); // toggle after effect
+                });
+            }
+            else {
+                openmenus.push(this.href);
+                console.log(this);
+
+                var current = $(this);
+
+                setTimeout(function() {
+                    $('.sidebar > ul > li').removeClass('current');
+                    current.parent().addClass('current'); // toggle before effect
+                    current.parent().children('ul').hide();
+                    current.parent().children('ul').slideDown(200);
+                }, 100);
+            }
+            return false;
+        });
+
+    });
+</script>
+
+    <!-- Google analytics -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-6096819-11']);
+        _gaq.push(['_setDomainName', 'docker.io']);
+        _gaq.push(['_setAllowLinker', true]);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+
+</body>
+</html>

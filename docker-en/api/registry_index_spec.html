@@ -1,0 +1,1184 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="google-site-verification" content="UxV66EKuPe87dgnH1sbrldrx6VsoWMrx5NjwkgUFxXI" />
+
+    <title>Registry Documentation - Docker Documentation</title>
+
+    <meta name="description" content="Documentation for docker Registry and Registry API" />
+    <meta name="keywords" content="docker, registry, api, index" />
+
+    <script type="text/javascript">
+        // This is probably used by the search engine
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:    '../',
+            VERSION:     '0',
+            COLLAPSE_INDEX: false,
+            FILE_SUFFIX: '.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+    <link rel="stylesheet" href="../_static/css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/bootstrap-responsive.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/main.css" type="text/css" />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/js/docs.js"></script>
+
+</head>
+
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-dotcloud">
+        <div class="container" style="text-align: center;">
+
+            <div style="float: right" class="pull-right">
+                <ul class="nav">
+                    <li id="nav-introduction"><a href="http://www.docker.io/">Introduction</a></li>
+                    <li id="nav-gettingstarted"><a href="http://www.docker.io/gettingstarted/">Getting started</a></li>
+                    <li id="nav-documentation" class="active"><a href="http://docs.docker.io/en/latest/">Documentation</a></li>
+                    <li id="nav-blog"><a href="http://blog.docker.io/">Blog</a></li>
+                </ul>
+                <!--<div class="social links" style="float: right; margin-top: 14px; margin-left: 12px">-->
+                    <!--<a class="twitter" href="http://twitter.com/getdocker">Twitter</a>-->
+                    <!--<a class="github" href="https://github.com/dotcloud/docker/">GitHub</a>-->
+                <!--</div>-->
+            </div>
+
+            <div style="margin-left: -12px; float: left;">
+                <a href="http://www.docker.io"><img style="margin-top: 12px; height: 38px" src="../_static/img/docker-letters-logo.gif"></a>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="span12 titlebar">
+            <!--<span class="pull-right" style="margin-left: 20px; font-size: 20px">0.1</span>-->
+            <div class="pull-right" id="fork-us" style="margin-top: 16px; margin-right: 16px;">
+                <a  href="http://github.com/dotcloud/docker/"><img src="../_static/img/fork-us.png"> Fork us on Github</a>
+            </div>
+            <h1 class="pageheader">DOCUMENTATION</h1>
+
+        </div>
+    </div>
+
+</div>
+
+<div class="container">
+
+    <!-- Docs nav
+     ================================================== -->
+    <div class="row" style="position: relative">
+        <div class="span3" style="height:100%;" >
+
+        </div>
+
+        <div class="span3 sidebar bs-docs-sidebar" style="position: absolute">
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../concepts/index.html">Concepts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../index.html">Introduction</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../installation/ubuntulinux.html">Ubuntu Linux</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/binaries.html">Binaries</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/vagrant.html">Using Vagrant (Mac, Linux)</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/windows.html">Using Vagrant (Windows)</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/amazon.html">Amazon EC2</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/rackspace.html">Rackspace Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/archlinux.html">Arch Linux</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/kernel.html">Kernel Requirements</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../use/index.html">Use</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../use/basics.html">The Basics</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../use/workingwithrepository.html">Working with the Repository</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../use/builder.html">Docker Builder</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../use/puppet.html">Using Puppet</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../examples/running_examples.html">Running the Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/hello_world.html">Hello World</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/hello_world_daemon.html">Hello World Daemon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/python_web_app.html">Python Web App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/nodejs_web_app.html">Node.js Web App</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/running_redis_service.html">Redis Service</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/running_ssh_service.html">SSH Daemon Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/couchdb_data_volumes.html">CouchDB Service</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../commandline/index.html">Commands</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/cli.html">Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/attach.html"><tt class="docutils literal"><span class="pre">attach</span></tt> &#8211; Attach to a running container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/build.html"><tt class="docutils literal"><span class="pre">build</span></tt> &#8211; Build a container from a Dockerfile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/commit.html"><tt class="docutils literal"><span class="pre">commit</span></tt> &#8211; Create a new image from a container&#8217;s changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/diff.html"><tt class="docutils literal"><span class="pre">diff</span></tt> &#8211; Inspect changes on a container&#8217;s filesystem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/export.html"><tt class="docutils literal"><span class="pre">export</span></tt> &#8211; Stream the contents of a container as a tar archive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/history.html"><tt class="docutils literal"><span class="pre">history</span></tt> &#8211; Show the history of an image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/images.html"><tt class="docutils literal"><span class="pre">images</span></tt> &#8211; List images</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/import.html"><tt class="docutils literal"><span class="pre">import</span></tt> &#8211; Create a new filesystem image from the contents of a tarball</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/info.html"><tt class="docutils literal"><span class="pre">info</span></tt> &#8211; Display system-wide information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/inspect.html"><tt class="docutils literal"><span class="pre">inspect</span></tt> &#8211; Return low-level information on a container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/kill.html"><tt class="docutils literal"><span class="pre">kill</span></tt> &#8211; Kill a running container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/login.html"><tt class="docutils literal"><span class="pre">login</span></tt> &#8211; Register or Login to the docker registry server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/logs.html"><tt class="docutils literal"><span class="pre">logs</span></tt> &#8211; Fetch the logs of a container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/port.html"><tt class="docutils literal"><span class="pre">port</span></tt> &#8211; Lookup the public-facing port which is NAT-ed to PRIVATE_PORT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/ps.html"><tt class="docutils literal"><span class="pre">ps</span></tt> &#8211; List containers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/pull.html"><tt class="docutils literal"><span class="pre">pull</span></tt> &#8211; Pull an image or a repository from the docker registry server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/push.html"><tt class="docutils literal"><span class="pre">push</span></tt> &#8211; Push an image or a repository to the docker registry server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/restart.html"><tt class="docutils literal"><span class="pre">restart</span></tt> &#8211; Restart a running container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/rm.html"><tt class="docutils literal"><span class="pre">rm</span></tt> &#8211; Remove a container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/rmi.html"><tt class="docutils literal"><span class="pre">rmi</span></tt> &#8211; Remove an image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/run.html"><tt class="docutils literal"><span class="pre">run</span></tt> &#8211; Run a command in a new container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/search.html"><tt class="docutils literal"><span class="pre">search</span></tt> &#8211; Search for an image in the docker index</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/start.html"><tt class="docutils literal"><span class="pre">start</span></tt> &#8211; Start a stopped container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/stop.html"><tt class="docutils literal"><span class="pre">stop</span></tt> &#8211; Stop a running container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/tag.html"><tt class="docutils literal"><span class="pre">tag</span></tt> &#8211; Tag an image into a repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/version.html"><tt class="docutils literal"><span class="pre">version</span></tt> &#8211; Show the docker version information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/wait.html"><tt class="docutils literal"><span class="pre">wait</span></tt> &#8211; Block until a container stops, then print its exit code</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/attach.html">attach</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/build.html">build</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/commit.html">commit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/diff.html">diff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/export.html">export</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/history.html">history</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/images.html">images</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/import.html">import</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/info.html">info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/inspect.html">inspect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/kill.html">kill</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/login.html">login</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/logs.html">logs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/port.html">port</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/ps.html">ps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/pull.html">pull</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/push.html">push</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/restart.html">restart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/rm.html">rm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/rmi.html">rmi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/run.html">run</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/search.html">search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/start.html">start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/stop.html">stop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/tag.html">tag</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/version.html">version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/wait.html">wait</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/index.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/contributing.html">Contributing to Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/devenvironment.html">Setting Up a Dev Environment</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">APIs</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">Registry &amp; index Spec</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="registry_api.html">Docker Registry API</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index_api.html">Docker Index API</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="docker_remote_api.html">Docker Remote API</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="docker_remote_api.html#docker-remote-api-client-libraries">Docker Remote API Client Libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a><ul class="simple">
+</ul>
+</li>
+</ul>
+
+        </div>
+
+        <!-- body block -->
+        <div class="span9">
+
+            <!-- Main section
+            ================================================== -->
+            <section id="global" class="containerblock">
+                
+  <div class="section" id="registry-index-spec">
+<h1><a class="toc-backref" href="#id1">Registry &amp; index Spec</a></h1>
+<div class="contents topic" id="table-of-contents">
+<p class="topic-title first">Table of Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#registry-index-spec" id="id1">Registry &amp; index Spec</a><ul>
+<li><a class="reference internal" href="#the-3-roles" id="id2">1. The 3 roles</a><ul>
+<li><a class="reference internal" href="#index" id="id3">1.1 Index</a></li>
+<li><a class="reference internal" href="#registry" id="id4">1.2 Registry</a></li>
+<li><a class="reference internal" href="#docker" id="id5">1.3 Docker</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#workflow" id="id6">2. Workflow</a><ul>
+<li><a class="reference internal" href="#pull" id="id7">2.1 Pull</a><ul>
+<li><a class="reference internal" href="#api-pulling-repository-foo-bar" id="id8">API (pulling repository foo/bar):</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#push" id="id9">2.2 Push</a><ul>
+<li><a class="reference internal" href="#api-pushing-repos-foo-bar" id="id10">API (pushing repos foo/bar):</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#delete" id="id11">2.3 Delete</a><ul>
+<li><a class="reference internal" href="#api-deleting-repository-foo-bar" id="id12">API (deleting repository foo/bar):</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#how-to-use-the-registry-in-standalone-mode" id="id13">3. How to use the Registry in standalone mode</a><ul>
+<li><a class="reference internal" href="#without-an-index" id="id14">3.1 Without an Index</a></li>
+<li><a class="reference internal" href="#with-an-index" id="id15">3.2 With an Index</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#the-api" id="id16">4. The API</a><ul>
+<li><a class="reference internal" href="#images" id="id17">4.1 Images</a></li>
+<li><a class="reference internal" href="#users" id="id18">4.2 Users</a><ul>
+<li><a class="reference internal" href="#create-a-user-index" id="id19">4.2.1 Create a user (Index)</a></li>
+<li><a class="reference internal" href="#update-a-user-index" id="id20">4.2.2 Update a user (Index)</a></li>
+<li><a class="reference internal" href="#login-index" id="id21">4.2.3 Login (Index)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#tags-registry" id="id22">4.3 Tags (Registry)</a><ul>
+<li><a class="reference internal" href="#get-all-tags" id="id23">4.3.1 Get all tags</a></li>
+<li><a class="reference internal" href="#read-the-content-of-a-tag-resolve-the-image-id" id="id24">4.3.2 Read the content of a tag (resolve the image id)</a></li>
+<li><a class="reference internal" href="#delete-a-tag-registry" id="id25">4.3.3 Delete a tag (registry)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#images-index" id="id26">4.4 Images (Index)</a><ul>
+<li><a class="reference internal" href="#get-the-images" id="id27">4.4.1 Get the images</a></li>
+<li><a class="reference internal" href="#add-update-the-images" id="id28">4.4.2 Add/update the images</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#repositories" id="id29">4.5 Repositories</a><ul>
+<li><a class="reference internal" href="#remove-a-repository-registry" id="id30">4.5.1 Remove a Repository (Registry)</a></li>
+<li><a class="reference internal" href="#remove-a-repository-index" id="id31">4.5.2 Remove a Repository (Index)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#chaining-registries" id="id32">5. Chaining Registries</a></li>
+<li><a class="reference internal" href="#authentication-authorization" id="id33">6. Authentication &amp; Authorization</a><ul>
+<li><a class="reference internal" href="#on-the-index" id="id34">6.1 On the Index</a></li>
+<li><a class="reference internal" href="#on-the-registry" id="id35">6.2 On the Registry</a></li>
+<li><a class="reference internal" href="#document-version" id="id36">7.0 Document Version</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="the-3-roles">
+<h2><a class="toc-backref" href="#id2">1. The 3 roles</a></h2>
+<div class="section" id="index">
+<h3><a class="toc-backref" href="#id3">1.1 Index</a></h3>
+<p>The Index is responsible for centralizing information about:
+- User accounts
+- Checksums of the images
+- Public namespaces</p>
+<p>The Index has different components:
+- Web UI
+- Meta-data store (comments, stars, list public repositories)
+- Authentication service
+- Tokenization</p>
+<p>The index is authoritative for those information.</p>
+<p>We expect that there will be only one instance of the index, run and managed by dotCloud.</p>
+</div>
+<div class="section" id="registry">
+<h3><a class="toc-backref" href="#id4">1.2 Registry</a></h3>
+<ul class="simple">
+<li>It stores the images and the graph for a set of repositories</li>
+<li>It does not have user accounts data</li>
+<li>It has no notion of user accounts or authorization</li>
+<li>It delegates authentication and authorization to the Index Auth service using tokens</li>
+<li>It supports different storage backends (S3, cloud files, local FS)</li>
+<li>It doesn’t have a local database</li>
+<li>It will be open-sourced at some point</li>
+</ul>
+<p>We expect that there will be multiple registries out there. To help to grasp the context, here are some examples of registries:</p>
+<ul class="simple">
+<li><strong>sponsor registry</strong>: such a registry is provided by a third-party hosting infrastructure as a convenience for their customers and the docker community as a whole. Its costs are supported by the third party, but the management and operation of the registry are supported by dotCloud. It features read/write access, and delegates authentication and authorization to the Index.</li>
+<li><strong>mirror registry</strong>: such a registry is provided by a third-party hosting infrastructure but is targeted at their customers only. Some mechanism (unspecified to date) ensures that public images are pulled from a sponsor registry to the mirror registry, to make sure that the customers of the third-party provider can “docker pull” those images locally.</li>
+<li><strong>vendor registry</strong>: such a registry is provided by a software vendor, who wants to distribute docker images. It would be operated and managed by the vendor. Only users authorized by the vendor would be able to get write access. Some images would be public (accessible for anyone), others private (accessible only for authorized users). Authentication and authorization would be delegated to the Index. The goal of vendor registries is to let someone do “docker pull basho/riak1.3” and automatically push from the vendor registry (instead of a sponsor registry); i.e. get all the convenience of a sponsor registry, while retaining control on the asset distribution.</li>
+<li><strong>private registry</strong>: such a registry is located behind a firewall, or protected by an additional security layer (HTTP authorization, SSL client-side certificates, IP address authorization...). The registry is operated by a private entity, outside of dotCloud’s control. It can optionally delegate additional authorization to the Index, but it is not mandatory.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Mirror registries and private registries which do not use the Index don’t even need to run the registry code. They can be implemented by any kind of transport implementing HTTP GET and PUT. Read-only registries can be powered by a simple static HTTP server.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<dl class="last docutils">
+<dt>The latter implies that while HTTP is the protocol of choice for a registry, multiple schemes are possible (and in some cases, trivial):</dt>
+<dd><ul class="first last simple">
+<li>HTTP with GET (and PUT for read-write registries);</li>
+<li>local mount point;</li>
+<li>remote docker addressed through SSH.</li>
+</ul>
+</dd>
+</dl>
+</div>
+<p>The latter would only require two new commands in docker, e.g. “registryget” and “registryput”, wrapping access to the local filesystem (and optionally doing consistency checks). Authentication and authorization are then delegated to SSH (e.g. with public keys).</p>
+</div>
+<div class="section" id="docker">
+<h3><a class="toc-backref" href="#id5">1.3 Docker</a></h3>
+<p>On top of being a runtime for LXC, Docker is the Registry client. It supports:
+- Push / Pull on the registry
+- Client authentication on the Index</p>
+</div>
+</div>
+<div class="section" id="workflow">
+<h2><a class="toc-backref" href="#id6">2. Workflow</a></h2>
+<div class="section" id="pull">
+<h3><a class="toc-backref" href="#id7">2.1 Pull</a></h3>
+<img alt="../_images/docker_pull_chart.png" src="../_images/docker_pull_chart.png" />
+<ol class="arabic simple">
+<li>Contact the Index to know where I should download “samalba/busybox”</li>
+<li>Index replies:
+a. “samalba/busybox” is on Registry A
+b. here are the checksums for “samalba/busybox” (for all layers)
+c. token</li>
+<li>Contact Registry A to receive the layers for “samalba/busybox” (all of them to the base image). Registry A is authoritative for “samalba/busybox” but keeps a copy of all inherited layers and serve them all from the same location.</li>
+<li>registry contacts index to verify if token/user is allowed to download images</li>
+<li>Index returns true/false lettings registry know if it should proceed or error out</li>
+<li>Get the payload for all layers</li>
+</ol>
+<p>It’s possible to run docker pull https://&lt;registry&gt;/repositories/samalba/busybox. In this case, docker bypasses the Index. However the security is not guaranteed (in case Registry A is corrupted) because there won’t be any checksum checks.</p>
+<p>Currently registry redirects to s3 urls for downloads, going forward all downloads need to be streamed through the registry. The Registry will then abstract the calls to S3 by a top-level class which implements sub-classes for S3 and local storage.</p>
+<p>Token is only returned when the &#8216;X-Docker-Token&#8217; header is sent with request.</p>
+<p>Basic Auth is required to pull private repos. Basic auth isn&#8217;t required for pulling public repos, but if one is provided, it needs to be valid and for an active account.</p>
+<div class="section" id="api-pulling-repository-foo-bar">
+<h4><a class="toc-backref" href="#id8">API (pulling repository foo/bar):</a></h4>
+<ol class="arabic">
+<li><dl class="first docutils">
+<dt>(Docker -&gt; Index) GET /v1/repositories/foo/bar/images</dt>
+<dd><dl class="first last docutils">
+<dt><strong>Headers</strong>:</dt>
+<dd><p class="first last">Authorization: Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==
+X-Docker-Token: true</p>
+</dd>
+<dt><strong>Action</strong>:</dt>
+<dd><p class="first last">(looking up the foo/bar in db and gets images and checksums for that repo (all if no tag is specified, if tag, only checksums for those tags) see part 4.4.1)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</li>
+<li><p class="first">(Index -&gt; Docker) HTTP 200 OK</p>
+<blockquote>
+<div><dl class="docutils">
+<dt><strong>Headers</strong>:</dt>
+<dd><ul class="first last simple">
+<li>Authorization: Token signature=123abc,repository=”foo/bar”,access=write</li>
+<li>X-Docker-Endpoints: registry.docker.io [, registry2.docker.io]</li>
+</ul>
+</dd>
+<dt><strong>Body</strong>:</dt>
+<dd><p class="first last">Jsonified checksums (see part 4.4.1)</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+<li><dl class="first docutils">
+<dt>(Docker -&gt; Registry) GET /v1/repositories/foo/bar/tags/latest</dt>
+<dd><dl class="first last docutils">
+<dt><strong>Headers</strong>:</dt>
+<dd><p class="first last">Authorization: Token signature=123abc,repository=”foo/bar”,access=write</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</li>
+<li><p class="first">(Registry -&gt; Index) GET /v1/repositories/foo/bar/images</p>
+<blockquote>
+<div><dl class="docutils">
+<dt><strong>Headers</strong>:</dt>
+<dd><p class="first last">Authorization: Token signature=123abc,repository=”foo/bar”,access=read</p>
+</dd>
+<dt><strong>Body</strong>:</dt>
+<dd><p class="first last">&lt;ids and checksums in payload&gt;</p>
+</dd>
+<dt><strong>Action</strong>:</dt>
+<dd><p class="first">( Lookup token see if they have access to pull.)</p>
+<dl class="last docutils">
+<dt>If good:</dt>
+<dd><p class="first last">HTTP 200 OK
+Index will invalidate the token</p>
+</dd>
+<dt>If bad:</dt>
+<dd><p class="first last">HTTP 401 Unauthorized</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+<li><dl class="first docutils">
+<dt>(Docker -&gt; Registry) GET /v1/images/928374982374/ancestry</dt>
+<dd><dl class="first last docutils">
+<dt><strong>Action</strong>:</dt>
+<dd><p class="first last">(for each image id returned in the registry, fetch /json + /layer)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If someone makes a second request, then we will always give a new token, never reuse tokens.</p>
+</div>
+</div>
+</div>
+<div class="section" id="push">
+<h3><a class="toc-backref" href="#id9">2.2 Push</a></h3>
+<img alt="../_images/docker_push_chart.png" src="../_images/docker_push_chart.png" />
+<ol class="arabic simple">
+<li>Contact the index to allocate the repository name “samalba/busybox” (authentication required with user credentials)</li>
+<li>If authentication works and namespace available, “samalba/busybox” is allocated and a temporary token is returned (namespace is marked as initialized in index)</li>
+<li>Push the image on the registry (along with the token)</li>
+<li>Registry A contacts the Index to verify the token (token must corresponds to the repository name)</li>
+<li>Index validates the token. Registry A starts reading the stream pushed by docker and store the repository (with its images)</li>
+<li>docker contacts the index to give checksums for upload images</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>It’s possible not to use the Index at all!</strong> In this case, a deployed version of the Registry is deployed to store and serve images. Those images are not authentified and the security is not guaranteed.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>Index can be replaced!</strong> For a private Registry deployed, a custom Index can be used to serve and validate token according to different policies.</p>
+</div>
+<p>Docker computes the checksums and submit them to the Index at the end of the push. When a repository name does not have checksums on the Index, it means that the push is in progress (since checksums are submitted at the end).</p>
+<div class="section" id="api-pushing-repos-foo-bar">
+<h4><a class="toc-backref" href="#id10">API (pushing repos foo/bar):</a></h4>
+<ol class="arabic">
+<li><dl class="first docutils">
+<dt>(Docker -&gt; Index) PUT /v1/repositories/foo/bar/</dt>
+<dd><dl class="first last docutils">
+<dt><strong>Headers</strong>:</dt>
+<dd><p class="first last">Authorization: Basic sdkjfskdjfhsdkjfh==
+X-Docker-Token: true</p>
+</dd>
+<dt><strong>Action</strong>::</dt>
+<dd><ul class="first last simple">
+<li>in index, we allocated a new repository, and set to initialized</li>
+</ul>
+</dd>
+<dt><strong>Body</strong>::</dt>
+<dd><p class="first">(The body contains the list of images that are going to be pushed, with empty checksums. The checksums will be set at the end of the push):</p>
+<div class="last highlight-python"><pre>[{“id”: “9e89cc6f0bc3c38722009fe6857087b486531f9a779a0c17e3ed29dae8f12c4f”}]</pre>
+</div>
+</dd>
+</dl>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>(Index -&gt; Docker) 200 Created</dt>
+<dd><dl class="first last docutils">
+<dt><strong>Headers</strong>:</dt>
+<dd><ul class="first last simple">
+<li>WWW-Authenticate: Token signature=123abc,repository=”foo/bar”,access=write</li>
+<li>X-Docker-Endpoints: registry.docker.io [, registry2.docker.io]</li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>(Docker -&gt; Registry) PUT /v1/images/98765432_parent/json</dt>
+<dd><dl class="first last docutils">
+<dt><strong>Headers</strong>:</dt>
+<dd><p class="first last">Authorization: Token signature=123abc,repository=”foo/bar”,access=write</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>(Registry-&gt;Index) GET /v1/repositories/foo/bar/images</dt>
+<dd><dl class="first last docutils">
+<dt><strong>Headers</strong>:</dt>
+<dd><p class="first last">Authorization: Token signature=123abc,repository=”foo/bar”,access=write</p>
+</dd>
+<dt><strong>Action</strong>::</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Index:</dt>
+<dd><p class="first last">will invalidate the token.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Registry:</dt>
+<dd><p class="first last">grants a session (if token is approved) and fetches the images id</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>(Docker -&gt; Registry) PUT /v1/images/98765432_parent/json</dt>
+<dd><dl class="first last docutils">
+<dt><strong>Headers</strong>::</dt>
+<dd><ul class="first last simple">
+<li>Authorization: Token signature=123abc,repository=”foo/bar”,access=write</li>
+<li>Cookie: (Cookie provided by the Registry)</li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>(Docker -&gt; Registry) PUT /v1/images/98765432/json</dt>
+<dd><dl class="first last docutils">
+<dt><strong>Headers</strong>:</dt>
+<dd><p class="first last">Cookie: (Cookie provided by the Registry)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>(Docker -&gt; Registry) PUT /v1/images/98765432_parent/layer</dt>
+<dd><dl class="first last docutils">
+<dt><strong>Headers</strong>:</dt>
+<dd><p class="first last">Cookie: (Cookie provided by the Registry)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>(Docker -&gt; Registry) PUT /v1/images/98765432/layer</dt>
+<dd><dl class="first last docutils">
+<dt><strong>Headers</strong>:</dt>
+<dd><p class="first last">X-Docker-Checksum: sha256:436745873465fdjkhdfjkgh</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>(Docker -&gt; Registry) PUT /v1/repositories/foo/bar/tags/latest</dt>
+<dd><dl class="first last docutils">
+<dt><strong>Headers</strong>:</dt>
+<dd><p class="first last">Cookie: (Cookie provided by the Registry)</p>
+</dd>
+<dt><strong>Body</strong>:</dt>
+<dd><p class="first last">“98765432”</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</li>
+<li><p class="first">(Docker -&gt; Index) PUT /v1/repositories/foo/bar/images</p>
+<dl class="docutils">
+<dt><strong>Headers</strong>:</dt>
+<dd><p class="first last">Authorization: Basic 123oislifjsldfj==
+X-Docker-Endpoints: registry1.docker.io (no validation on this right now)</p>
+</dd>
+<dt><strong>Body</strong>:</dt>
+<dd><p class="first">(The image, id’s, tags and checksums)</p>
+<p class="last">[{“id”: “9e89cc6f0bc3c38722009fe6857087b486531f9a779a0c17e3ed29dae8f12c4f”,
+“checksum”: “b486531f9a779a0c17e3ed29dae8f12c4f9e89cc6f0bc3c38722009fe6857087”}]</p>
+</dd>
+</dl>
+<p><strong>Return</strong> HTTP 204</p>
+</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>If push fails and they need to start again, what happens in the index, there will already be a record for the namespace/name, but it will be initialized. Should we allow it, or mark as name already used? One edge case could be if someone pushes the same thing at the same time with two different shells.</p>
+<p class="last">If it&#8217;s a retry on the Registry, Docker has a cookie (provided by the registry after token validation). So the Index won’t have to provide a new token.</p>
+</div>
+</div>
+</div>
+<div class="section" id="delete">
+<h3><a class="toc-backref" href="#id11">2.3 Delete</a></h3>
+<p>If you need to delete something from the index or registry, we need a nice clean way to do that. Here is the workflow.</p>
+<ol class="arabic simple">
+<li>Docker contacts the index to request a delete of a repository “samalba/busybox” (authentication required with user credentials)</li>
+<li>If authentication works and repository is valid, “samalba/busybox” is marked as deleted and a temporary token is returned</li>
+<li>Send a delete request to the registry for the repository (along with the token)</li>
+<li>Registry A contacts the Index to verify the token (token must corresponds to the repository name)</li>
+<li>Index validates the token. Registry A deletes the repository and everything associated to it.</li>
+<li>docker contacts the index to let it know it was removed from the registry, the index removes all records from the database.</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The Docker client should present an &#8220;Are you sure?&#8221; prompt to confirm the deletion before starting the process. Once it starts it can&#8217;t be undone.</p>
+</div>
+<div class="section" id="api-deleting-repository-foo-bar">
+<h4><a class="toc-backref" href="#id12">API (deleting repository foo/bar):</a></h4>
+<ol class="arabic">
+<li><dl class="first docutils">
+<dt>(Docker -&gt; Index) DELETE /v1/repositories/foo/bar/</dt>
+<dd><dl class="first last docutils">
+<dt><strong>Headers</strong>:</dt>
+<dd><p class="first last">Authorization: Basic sdkjfskdjfhsdkjfh==
+X-Docker-Token: true</p>
+</dd>
+<dt><strong>Action</strong>::</dt>
+<dd><ul class="first last simple">
+<li>in index, we make sure it is a valid repository, and set to deleted (logically)</li>
+</ul>
+</dd>
+<dt><strong>Body</strong>::</dt>
+<dd><p class="first last">Empty</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>(Index -&gt; Docker) 202 Accepted</dt>
+<dd><dl class="first last docutils">
+<dt><strong>Headers</strong>:</dt>
+<dd><ul class="first last simple">
+<li>WWW-Authenticate: Token signature=123abc,repository=”foo/bar”,access=delete</li>
+<li>X-Docker-Endpoints: registry.docker.io [, registry2.docker.io]   # list of endpoints where this repo lives.</li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>(Docker -&gt; Registry) DELETE /v1/repositories/foo/bar/</dt>
+<dd><dl class="first last docutils">
+<dt><strong>Headers</strong>:</dt>
+<dd><p class="first last">Authorization: Token signature=123abc,repository=”foo/bar”,access=delete</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>(Registry-&gt;Index) PUT /v1/repositories/foo/bar/auth</dt>
+<dd><dl class="first last docutils">
+<dt><strong>Headers</strong>:</dt>
+<dd><p class="first last">Authorization: Token signature=123abc,repository=”foo/bar”,access=delete</p>
+</dd>
+<dt><strong>Action</strong>::</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Index:</dt>
+<dd><p class="first last">will invalidate the token.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Registry:</dt>
+<dd><p class="first last">deletes the repository (if token is approved)</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>(Registry -&gt; Docker) 200 OK</dt>
+<dd><p class="first last">200 If success
+403 if forbidden
+400 if bad request
+404 if repository isn&#8217;t found</p>
+</dd>
+</dl>
+</li>
+<li><p class="first">(Docker -&gt; Index) DELETE /v1/repositories/foo/bar/</p>
+<blockquote>
+<div><dl class="docutils">
+<dt><strong>Headers</strong>:</dt>
+<dd><p class="first last">Authorization: Basic 123oislifjsldfj==
+X-Docker-Endpoints: registry-1.docker.io (no validation on this right now)</p>
+</dd>
+<dt><strong>Body</strong>:</dt>
+<dd><p class="first last">Empty</p>
+</dd>
+</dl>
+<p><strong>Return</strong> HTTP 200</p>
+</div></blockquote>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="section" id="how-to-use-the-registry-in-standalone-mode">
+<h2><a class="toc-backref" href="#id13">3. How to use the Registry in standalone mode</a></h2>
+<p>The Index has two main purposes (along with its fancy social features):</p>
+<ul>
+<li><dl class="first docutils">
+<dt>Resolve short names (to avoid passing absolute URLs all the time)</dt>
+<dd><ul class="first last simple">
+<li>username/projectname -&gt; https://registry.docker.io/users/&lt;username&gt;/repositories/&lt;projectname&gt;/</li>
+<li>team/projectname -&gt; https://registry.docker.io/team/&lt;team&gt;/repositories/&lt;projectname&gt;/</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">Authenticate a user as a repos owner (for a central referenced repository)</p>
+</li>
+</ul>
+<div class="section" id="without-an-index">
+<h3><a class="toc-backref" href="#id14">3.1 Without an Index</a></h3>
+<p>Using the Registry without the Index can be useful to store the images on a private network without having to rely on an external entity controlled by dotCloud.</p>
+<p>In this case, the registry will be launched in a special mode (&#8211;standalone? &#8211;no-index?). In this mode, the only thing which changes is that Registry will never contact the Index to verify a token. It will be the Registry owner responsibility to authenticate the user who pushes (or even pulls) an image using any mechanism (HTTP auth, IP based, etc...).</p>
+<p>In this scenario, the Registry is responsible for the security in case of data corruption since the checksums are not delivered by a trusted entity.</p>
+<p>As hinted previously, a standalone registry can also be implemented by any HTTP server handling GET/PUT requests (or even only GET requests if no write access is necessary).</p>
+</div>
+<div class="section" id="with-an-index">
+<h3><a class="toc-backref" href="#id15">3.2 With an Index</a></h3>
+<p>The Index data needed by the Registry are simple:
+- Serve the checksums
+- Provide and authorize a Token</p>
+<p>In the scenario of a Registry running on a private network with the need of centralizing and authorizing, it’s easy to use a custom Index.</p>
+<p>The only challenge will be to tell Docker to contact (and trust) this custom Index. Docker will be configurable at some point to use a specific Index, it’ll be the private entity responsibility (basically the organization who uses Docker in a private environment) to maintain the Index and the Docker’s configuration among its consumers.</p>
+</div>
+</div>
+<div class="section" id="the-api">
+<h2><a class="toc-backref" href="#id16">4. The API</a></h2>
+<p>The first version of the api is available here: <a class="reference external" href="https://github.com/jpetazzo/docker/blob/acd51ecea8f5d3c02b00a08176171c59442df8b3/docs/images-repositories-push-pull.md">https://github.com/jpetazzo/docker/blob/acd51ecea8f5d3c02b00a08176171c59442df8b3/docs/images-repositories-push-pull.md</a></p>
+<div class="section" id="images">
+<h3><a class="toc-backref" href="#id17">4.1 Images</a></h3>
+<p>The format returned in the images is not defined here (for layer and json), basically because Registry stores exactly the same kind of information as Docker uses to manage them.</p>
+<p>The format of ancestry is a line-separated list of image ids, in age order. I.e. the image’s parent is on the last line, the parent of the parent on the next-to-last line, etc.; if the image has no parent, the file is empty.</p>
+<p>GET /v1/images/&lt;image_id&gt;/layer
+PUT /v1/images/&lt;image_id&gt;/layer
+GET /v1/images/&lt;image_id&gt;/json
+PUT /v1/images/&lt;image_id&gt;/json
+GET /v1/images/&lt;image_id&gt;/ancestry
+PUT /v1/images/&lt;image_id&gt;/ancestry</p>
+</div>
+<div class="section" id="users">
+<h3><a class="toc-backref" href="#id18">4.2 Users</a></h3>
+<div class="section" id="create-a-user-index">
+<h4><a class="toc-backref" href="#id19">4.2.1 Create a user (Index)</a></h4>
+<p>POST /v1/users</p>
+<dl class="docutils">
+<dt><strong>Body</strong>:</dt>
+<dd>{&#8220;email&#8221;: &#8220;<a class="reference external" href="mailto:sam&#37;&#52;&#48;dotcloud&#46;com">sam<span>&#64;</span>dotcloud<span>&#46;</span>com</a>&#8221;, &#8220;password&#8221;: &#8220;toto42&#8221;, &#8220;username&#8221;: &#8220;foobar&#8221;&#8217;}</dd>
+<dt><strong>Validation</strong>:</dt>
+<dd><ul class="first last simple">
+<li><strong>username</strong> : min 4 character, max 30 characters, must match the regular expression [<a href="#id37"><span class="problematic" id="id38">a-z0-9_</span></a>].</li>
+<li><strong>password</strong>: min 5 characters</li>
+</ul>
+</dd>
+</dl>
+<p><strong>Valid</strong>: return HTTP 200</p>
+<p>Errors: HTTP 400 (we should create error codes for possible errors)
+- invalid json
+- missing field
+- wrong format (username, password, email, etc)
+- forbidden name
+- name already exists</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">A user account will be valid only if the email has been validated (a validation link is sent to the email address).</p>
+</div>
+</div>
+<div class="section" id="update-a-user-index">
+<h4><a class="toc-backref" href="#id20">4.2.2 Update a user (Index)</a></h4>
+<p>PUT /v1/users/&lt;username&gt;</p>
+<dl class="docutils">
+<dt><strong>Body</strong>:</dt>
+<dd>{&#8220;password&#8221;: &#8220;toto&#8221;}</dd>
+</dl>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">We can also update email address, if they do, they will need to reverify their new email address.</p>
+</div>
+</div>
+<div class="section" id="login-index">
+<h4><a class="toc-backref" href="#id21">4.2.3 Login (Index)</a></h4>
+<p>Does nothing else but asking for a user authentication. Can be used to validate credentials. HTTP Basic Auth for now, maybe change in future.</p>
+<p>GET /v1/users</p>
+<dl class="docutils">
+<dt><strong>Return</strong>:</dt>
+<dd><ul class="first last simple">
+<li>Valid: HTTP 200</li>
+<li>Invalid login: HTTP 401</li>
+<li>Account inactive: HTTP 403 Account is not Active</li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="tags-registry">
+<h3><a class="toc-backref" href="#id22">4.3 Tags (Registry)</a></h3>
+<p>The Registry does not know anything about users. Even though repositories are under usernames, it’s just a namespace for the registry. Allowing us to implement organizations or different namespaces per user later, without modifying the Registry’s API.</p>
+<p>The following naming restrictions apply:</p>
+<ul class="simple">
+<li>Namespaces must match the same regular expression as usernames (See 4.2.1.)</li>
+<li>Repository names must match the regular expression [a-zA-Z0-9-_.]</li>
+</ul>
+<div class="section" id="get-all-tags">
+<h4><a class="toc-backref" href="#id23">4.3.1 Get all tags</a></h4>
+<p>GET /v1/repositories/&lt;namespace&gt;/&lt;repository_name&gt;/tags</p>
+<dl class="docutils">
+<dt><strong>Return</strong>: HTTP 200</dt>
+<dd>{
+&#8220;latest&#8221;: &#8220;9e89cc6f0bc3c38722009fe6857087b486531f9a779a0c17e3ed29dae8f12c4f&#8221;,
+“0.1.1”:  “b486531f9a779a0c17e3ed29dae8f12c4f9e89cc6f0bc3c38722009fe6857087”
+}</dd>
+</dl>
+</div>
+<div class="section" id="read-the-content-of-a-tag-resolve-the-image-id">
+<h4><a class="toc-backref" href="#id24">4.3.2 Read the content of a tag (resolve the image id)</a></h4>
+<p>GET /v1/repositories/&lt;namespace&gt;/&lt;repo_name&gt;/tags/&lt;tag&gt;</p>
+<dl class="docutils">
+<dt><strong>Return</strong>:</dt>
+<dd>&#8220;9e89cc6f0bc3c38722009fe6857087b486531f9a779a0c17e3ed29dae8f12c4f&#8221;</dd>
+</dl>
+</div>
+<div class="section" id="delete-a-tag-registry">
+<h4><a class="toc-backref" href="#id25">4.3.3 Delete a tag (registry)</a></h4>
+<p>DELETE /v1/repositories/&lt;namespace&gt;/&lt;repo_name&gt;/tags/&lt;tag&gt;</p>
+</div>
+</div>
+<div class="section" id="images-index">
+<h3><a class="toc-backref" href="#id26">4.4 Images (Index)</a></h3>
+<p>For the Index to “resolve” the repository name to a Registry location, it uses the X-Docker-Endpoints header. In other terms, this requests always add a “X-Docker-Endpoints” to indicate the location of the registry which hosts this repository.</p>
+<div class="section" id="get-the-images">
+<h4><a class="toc-backref" href="#id27">4.4.1 Get the images</a></h4>
+<p>GET /v1/repositories/&lt;namespace&gt;/&lt;repo_name&gt;/images</p>
+<dl class="docutils">
+<dt><strong>Return</strong>: HTTP 200</dt>
+<dd>[{“id”: “9e89cc6f0bc3c38722009fe6857087b486531f9a779a0c17e3ed29dae8f12c4f”, “checksum”: “<a class="reference external" href="md5:b486531f9a779a0c17e3ed29dae8f12c4f9e89cc6f0bc3c38722009fe6857087">md5:b486531f9a779a0c17e3ed29dae8f12c4f9e89cc6f0bc3c38722009fe6857087</a>”}]</dd>
+</dl>
+</div>
+<div class="section" id="add-update-the-images">
+<h4><a class="toc-backref" href="#id28">4.4.2 Add/update the images</a></h4>
+<p>You always add images, you never remove them.</p>
+<p>PUT /v1/repositories/&lt;namespace&gt;/&lt;repo_name&gt;/images</p>
+<dl class="docutils">
+<dt><strong>Body</strong>:</dt>
+<dd>[ {“id”: “9e89cc6f0bc3c38722009fe6857087b486531f9a779a0c17e3ed29dae8f12c4f”, “checksum”: “sha256:b486531f9a779a0c17e3ed29dae8f12c4f9e89cc6f0bc3c38722009fe6857087”} ]</dd>
+</dl>
+<p><strong>Return</strong> 204</p>
+</div>
+</div>
+<div class="section" id="repositories">
+<h3><a class="toc-backref" href="#id29">4.5 Repositories</a></h3>
+<div class="section" id="remove-a-repository-registry">
+<h4><a class="toc-backref" href="#id30">4.5.1 Remove a Repository (Registry)</a></h4>
+<p>DELETE /v1/repositories/&lt;namespace&gt;/&lt;repo_name&gt;</p>
+<p>Return 200 OK</p>
+</div>
+<div class="section" id="remove-a-repository-index">
+<h4><a class="toc-backref" href="#id31">4.5.2 Remove a Repository (Index)</a></h4>
+<p>This starts the delete process. see 2.3 for more details.</p>
+<p>DELETE /v1/repositories/&lt;namespace&gt;/&lt;repo_name&gt;</p>
+<p>Return 202 OK</p>
+</div>
+</div>
+</div>
+<div class="section" id="chaining-registries">
+<h2><a class="toc-backref" href="#id32">5. Chaining Registries</a></h2>
+<p>It’s possible to chain Registries server for several reasons:
+- Load balancing
+- Delegate the next request to another server</p>
+<p>When a Registry is a reference for a repository, it should host the entire images chain in order to avoid breaking the chain during the download.</p>
+<p>The Index and Registry use this mechanism to redirect on one or the other.</p>
+<p>Example with an image download:
+On every request, a special header can be returned:</p>
+<p>X-Docker-Endpoints: server1,server2</p>
+<p>On the next request, the client will always pick a server from this list.</p>
+</div>
+<div class="section" id="authentication-authorization">
+<h2><a class="toc-backref" href="#id33">6. Authentication &amp; Authorization</a></h2>
+<div class="section" id="on-the-index">
+<h3><a class="toc-backref" href="#id34">6.1 On the Index</a></h3>
+<p>The Index supports both “Basic” and “Token” challenges. Usually when there is a “401 Unauthorized”, the Index replies this:</p>
+<div class="highlight-python"><pre>401 Unauthorized
+WWW-Authenticate: Basic realm="auth required",Token</pre>
+</div>
+<p>You have 3 options:</p>
+<ol class="arabic">
+<li><p class="first">Provide user credentials and ask for a token</p>
+<blockquote>
+<div><dl class="docutils">
+<dt><strong>Header</strong>:</dt>
+<dd><ul class="first last simple">
+<li>Authorization: Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==</li>
+<li>X-Docker-Token: true</li>
+</ul>
+</dd>
+</dl>
+<p>In this case, along with the 200 response, you’ll get a new token (if user auth is ok):
+If authorization isn&#8217;t correct you get a 401 response.
+If account isn&#8217;t active you will get a 403 response.</p>
+<dl class="docutils">
+<dt><strong>Response</strong>:</dt>
+<dd><ul class="first last simple">
+<li>200 OK</li>
+<li>X-Docker-Token: Token signature=123abc,repository=”foo/bar”,access=read</li>
+</ul>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+<li><p class="first">Provide user credentials only</p>
+<blockquote>
+<div><dl class="docutils">
+<dt><strong>Header</strong>:</dt>
+<dd><p class="first last">Authorization: Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+<li><p class="first">Provide Token</p>
+<blockquote>
+<div><dl class="docutils">
+<dt><strong>Header</strong>:</dt>
+<dd><p class="first last">Authorization: Token signature=123abc,repository=”foo/bar”,access=read</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="on-the-registry">
+<h3><a class="toc-backref" href="#id35">6.2 On the Registry</a></h3>
+<p>The Registry only supports the Token challenge:</p>
+<div class="highlight-python"><pre>401 Unauthorized
+WWW-Authenticate: Token</pre>
+</div>
+<p>The only way is to provide a token on “401 Unauthorized” responses:</p>
+<div class="highlight-python"><pre>Authorization: Token signature=123abc,repository=”foo/bar”,access=read</pre>
+</div>
+<p>Usually, the Registry provides a Cookie when a Token verification succeeded. Every time the Registry passes a Cookie, you have to pass it back the same cookie.:</p>
+<div class="highlight-python"><pre>200 OK
+Set-Cookie: session="wD/J7LqL5ctqw8haL10vgfhrb2Q=?foo=UydiYXInCnAxCi4=&amp;timestamp=RjEzNjYzMTQ5NDcuNDc0NjQzCi4="; Path=/; HttpOnly</pre>
+</div>
+<p>Next request:</p>
+<div class="highlight-python"><pre>GET /(...)
+Cookie: session="wD/J7LqL5ctqw8haL10vgfhrb2Q=?foo=UydiYXInCnAxCi4=&amp;timestamp=RjEzNjYzMTQ5NDcuNDc0NjQzCi4="</pre>
+</div>
+</div>
+<div class="section" id="document-version">
+<h3><a class="toc-backref" href="#id36">7.0 Document Version</a></h3>
+<ul class="simple">
+<li>1.0 : May 6th 2013 : initial release</li>
+<li>1.1 : June 1st 2013 : Added Delete Repository and way to handle new source namespace.</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+            </section>
+
+        </div>
+    </div>
+</div>
+
+<div id="footer" class="container" >
+    <div class="row">
+
+        <div class="span12 footer">
+            <div class="tbox textright forceleftmargin social links pull-right">
+                <a class="twitter" href="http://twitter.com/getdocker">Twitter</a>
+                <a class="github" href="https://github.com/dotcloud/docker/">GitHub</a>
+            </div>
+
+            Docker is a project by <a href="http://www.dotcloud.com">dotCloud</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+</div>
+
+
+  <!-- script which should be loaded after everything else -->
+<script type="text/javascript">
+
+    // Function to make the sticky header possible
+    var shiftWindow = function() {
+        scrollBy(0, -70);
+        console.log("window shifted")
+    };
+    window.addEventListener("hashchange", shiftWindow);
+
+    function loadShift() {
+        if (window.location.hash) {
+            console.log("window has hash");
+            shiftWindow();
+        }
+    }
+
+    $(window).load(function() {
+        loadShift();
+        console.log("late loadshift");
+    });
+
+    $(function(){
+
+        // sidebar accordian-ing
+        // don't apply on last object (it should be the FAQ)
+
+        // define an array to which all opened items should be added
+        var openmenus = [];
+
+        var elements = $('.toctree-l2');
+        for (var i = 0; i < elements.length; i += 1) { var current = $(elements[i]); current.children('ul').hide();}
+
+
+        // set initial collapsed state
+        var elements = $('.toctree-l1');
+        for (var i = 0; i < elements.length; i += 1) {
+            var current = $(elements[i]);
+            if (current.hasClass('current')) {
+
+                currentlink = current.children('a')[0].href;
+                openmenus.push(currentlink);
+
+                // do nothing
+            } else {
+                // collapse children
+                current.children('ul').hide();
+            }
+        }
+
+        // attached handler on click
+        $('.sidebar > ul > li > a').not(':last').click(function(){
+
+            var index = $.inArray(this.href, openmenus)
+
+            if (index > -1) {
+                console.log(index);
+                openmenus.splice(index, 1);
+
+
+                $(this).parent().children('ul').slideUp(200, function() {
+                    // $(this).parent().removeClass('current'); // toggle after effect
+                });
+            }
+            else {
+                openmenus.push(this.href);
+                console.log(this);
+
+                var current = $(this);
+
+                setTimeout(function() {
+                    $('.sidebar > ul > li').removeClass('current');
+                    current.parent().addClass('current'); // toggle before effect
+                    current.parent().children('ul').hide();
+                    current.parent().children('ul').slideDown(200);
+                }, 100);
+            }
+            return false;
+        });
+
+    });
+</script>
+
+    <!-- Google analytics -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-6096819-11']);
+        _gaq.push(['_setDomainName', 'docker.io']);
+        _gaq.push(['_setAllowLinker', true]);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,1179 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="google-site-verification" content="UxV66EKuPe87dgnH1sbrldrx6VsoWMrx5NjwkgUFxXI" />
+
+    <title>Index API - Docker Documentation</title>
+
+    <meta name="description" content="API Documentation for Docker Index" />
+    <meta name="keywords" content="API, Docker, index, REST, documentation" />
+
+    <script type="text/javascript">
+        // This is probably used by the search engine
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:    '../',
+            VERSION:     '0',
+            COLLAPSE_INDEX: false,
+            FILE_SUFFIX: '.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+    <link rel="stylesheet" href="../_static/css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/bootstrap-responsive.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/main.css" type="text/css" />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/js/docs.js"></script>
+
+</head>
+
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-dotcloud">
+        <div class="container" style="text-align: center;">
+
+            <div style="float: right" class="pull-right">
+                <ul class="nav">
+                    <li id="nav-introduction"><a href="http://www.docker.io/">Introduction</a></li>
+                    <li id="nav-gettingstarted"><a href="http://www.docker.io/gettingstarted/">Getting started</a></li>
+                    <li id="nav-documentation" class="active"><a href="http://docs.docker.io/en/latest/">Documentation</a></li>
+                    <li id="nav-blog"><a href="http://blog.docker.io/">Blog</a></li>
+                </ul>
+                <!--<div class="social links" style="float: right; margin-top: 14px; margin-left: 12px">-->
+                    <!--<a class="twitter" href="http://twitter.com/getdocker">Twitter</a>-->
+                    <!--<a class="github" href="https://github.com/dotcloud/docker/">GitHub</a>-->
+                <!--</div>-->
+            </div>
+
+            <div style="margin-left: -12px; float: left;">
+                <a href="http://www.docker.io"><img style="margin-top: 12px; height: 38px" src="../_static/img/docker-letters-logo.gif"></a>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="span12 titlebar">
+            <!--<span class="pull-right" style="margin-left: 20px; font-size: 20px">0.1</span>-->
+            <div class="pull-right" id="fork-us" style="margin-top: 16px; margin-right: 16px;">
+                <a  href="http://github.com/dotcloud/docker/"><img src="../_static/img/fork-us.png"> Fork us on Github</a>
+            </div>
+            <h1 class="pageheader">DOCUMENTATION</h1>
+
+        </div>
+    </div>
+
+</div>
+
+<div class="container">
+
+    <!-- Docs nav
+     ================================================== -->
+    <div class="row" style="position: relative">
+        <div class="span3" style="height:100%;" >
+
+        </div>
+
+        <div class="span3 sidebar bs-docs-sidebar" style="position: absolute">
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../concepts/index.html">Concepts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../index.html">Introduction</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../installation/ubuntulinux.html">Ubuntu Linux</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/binaries.html">Binaries</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/vagrant.html">Using Vagrant (Mac, Linux)</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/windows.html">Using Vagrant (Windows)</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/amazon.html">Amazon EC2</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/rackspace.html">Rackspace Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/archlinux.html">Arch Linux</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/kernel.html">Kernel Requirements</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../use/index.html">Use</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../use/basics.html">The Basics</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../use/workingwithrepository.html">Working with the Repository</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../use/builder.html">Docker Builder</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../use/puppet.html">Using Puppet</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../examples/running_examples.html">Running the Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/hello_world.html">Hello World</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/hello_world_daemon.html">Hello World Daemon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/python_web_app.html">Python Web App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/nodejs_web_app.html">Node.js Web App</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/running_redis_service.html">Redis Service</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/running_ssh_service.html">SSH Daemon Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/couchdb_data_volumes.html">CouchDB Service</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../commandline/index.html">Commands</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/cli.html">Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/attach.html"><tt class="docutils literal"><span class="pre">attach</span></tt> &#8211; Attach to a running container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/build.html"><tt class="docutils literal"><span class="pre">build</span></tt> &#8211; Build a container from a Dockerfile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/commit.html"><tt class="docutils literal"><span class="pre">commit</span></tt> &#8211; Create a new image from a container&#8217;s changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/diff.html"><tt class="docutils literal"><span class="pre">diff</span></tt> &#8211; Inspect changes on a container&#8217;s filesystem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/export.html"><tt class="docutils literal"><span class="pre">export</span></tt> &#8211; Stream the contents of a container as a tar archive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/history.html"><tt class="docutils literal"><span class="pre">history</span></tt> &#8211; Show the history of an image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/images.html"><tt class="docutils literal"><span class="pre">images</span></tt> &#8211; List images</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/import.html"><tt class="docutils literal"><span class="pre">import</span></tt> &#8211; Create a new filesystem image from the contents of a tarball</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/info.html"><tt class="docutils literal"><span class="pre">info</span></tt> &#8211; Display system-wide information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/inspect.html"><tt class="docutils literal"><span class="pre">inspect</span></tt> &#8211; Return low-level information on a container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/kill.html"><tt class="docutils literal"><span class="pre">kill</span></tt> &#8211; Kill a running container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/login.html"><tt class="docutils literal"><span class="pre">login</span></tt> &#8211; Register or Login to the docker registry server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/logs.html"><tt class="docutils literal"><span class="pre">logs</span></tt> &#8211; Fetch the logs of a container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/port.html"><tt class="docutils literal"><span class="pre">port</span></tt> &#8211; Lookup the public-facing port which is NAT-ed to PRIVATE_PORT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/ps.html"><tt class="docutils literal"><span class="pre">ps</span></tt> &#8211; List containers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/pull.html"><tt class="docutils literal"><span class="pre">pull</span></tt> &#8211; Pull an image or a repository from the docker registry server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/push.html"><tt class="docutils literal"><span class="pre">push</span></tt> &#8211; Push an image or a repository to the docker registry server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/restart.html"><tt class="docutils literal"><span class="pre">restart</span></tt> &#8211; Restart a running container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/rm.html"><tt class="docutils literal"><span class="pre">rm</span></tt> &#8211; Remove a container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/rmi.html"><tt class="docutils literal"><span class="pre">rmi</span></tt> &#8211; Remove an image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/run.html"><tt class="docutils literal"><span class="pre">run</span></tt> &#8211; Run a command in a new container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/search.html"><tt class="docutils literal"><span class="pre">search</span></tt> &#8211; Search for an image in the docker index</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/start.html"><tt class="docutils literal"><span class="pre">start</span></tt> &#8211; Start a stopped container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/stop.html"><tt class="docutils literal"><span class="pre">stop</span></tt> &#8211; Stop a running container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/tag.html"><tt class="docutils literal"><span class="pre">tag</span></tt> &#8211; Tag an image into a repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/version.html"><tt class="docutils literal"><span class="pre">version</span></tt> &#8211; Show the docker version information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../commandline/command/wait.html"><tt class="docutils literal"><span class="pre">wait</span></tt> &#8211; Block until a container stops, then print its exit code</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/attach.html">attach</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/build.html">build</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/commit.html">commit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/diff.html">diff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/export.html">export</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/history.html">history</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/images.html">images</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/import.html">import</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/info.html">info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/inspect.html">inspect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/kill.html">kill</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/login.html">login</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/logs.html">logs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/port.html">port</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/ps.html">ps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/pull.html">pull</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/push.html">push</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/restart.html">restart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/rm.html">rm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/rmi.html">rmi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/run.html">run</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/search.html">search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/start.html">start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/stop.html">stop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/tag.html">tag</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/version.html">version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../commandline/command/wait.html">wait</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/index.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/contributing.html">Contributing to Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/devenvironment.html">Setting Up a Dev Environment</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">APIs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="registry_index_spec.html">Registry &amp; index Spec</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="registry_api.html">Docker Registry API</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Docker Index API</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="docker_remote_api.html">Docker Remote API</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="docker_remote_api.html#docker-remote-api-client-libraries">Docker Remote API Client Libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a><ul class="simple">
+</ul>
+</li>
+</ul>
+
+        </div>
+
+        <!-- body block -->
+        <div class="span9">
+
+            <!-- Main section
+            ================================================== -->
+            <section id="global" class="containerblock">
+                
+  <div class="section" id="docker-index-api">
+<h1><a class="toc-backref" href="#id4">Docker Index API</a></h1>
+<div class="contents topic" id="table-of-contents">
+<p class="topic-title first">Table of Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#docker-index-api" id="id4">Docker Index API</a><ul>
+<li><a class="reference internal" href="#brief-introduction" id="id5">1. Brief introduction</a></li>
+<li><a class="reference internal" href="#endpoints" id="id6">2. Endpoints</a><ul>
+<li><a class="reference internal" href="#repository" id="id7">2.1 Repository</a><ul>
+<li><a class="reference internal" href="#repositories" id="id8">Repositories</a><ul>
+<li><a class="reference internal" href="#user-repo" id="id9">User Repo</a></li>
+<li><a class="reference internal" href="#library-repo" id="id10">Library Repo</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#repository-images" id="id11">Repository Images</a><ul>
+<li><a class="reference internal" href="#user-repo-images" id="id12">User Repo Images</a></li>
+<li><a class="reference internal" href="#library-repo-images" id="id13">Library Repo Images</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#repository-authorization" id="id14">Repository Authorization</a><ul>
+<li><a class="reference internal" href="#id1" id="id15">Library Repo</a></li>
+<li><a class="reference internal" href="#id2" id="id16">User Repo</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#users" id="id17">2.2 Users</a><ul>
+<li><a class="reference internal" href="#user-login" id="id18">User Login</a></li>
+<li><a class="reference internal" href="#user-register" id="id19">User Register</a></li>
+<li><a class="reference internal" href="#update-user" id="id20">Update User</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#search" id="id21">2.3 Search</a><ul>
+<li><a class="reference internal" href="#id3" id="id22">Search</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="brief-introduction">
+<h2><a class="toc-backref" href="#id5">1. Brief introduction</a></h2>
+<ul class="simple">
+<li>This is the REST API for the Docker index</li>
+<li>Authorization is done with basic auth over SSL</li>
+<li>Not all commands require authentication, only those noted as such.</li>
+</ul>
+</div>
+<div class="section" id="endpoints">
+<h2><a class="toc-backref" href="#id6">2. Endpoints</a></h2>
+<div class="section" id="repository">
+<h3><a class="toc-backref" href="#id7">2.1 Repository</a></h3>
+<div class="section" id="repositories">
+<h4><a class="toc-backref" href="#id8">Repositories</a></h4>
+<div class="section" id="user-repo">
+<h5><a class="toc-backref" href="#id9">User Repo</a></h5>
+<dl class="put">
+<dt id="put--v1-repositories-(namespace)-(repo_name)-">
+<tt class="descname">PUT </tt><tt class="descname">/v1/repositories/</tt><big>(</big><em>namespace</em><big>)</big><tt class="descname">/</tt><big>(</big><em>repo_name</em><big>)</big><tt class="descname">/</tt></dt>
+<dd><p>Create a user repository with the given <tt class="docutils literal"><span class="pre">namespace</span></tt> and <tt class="docutils literal"><span class="pre">repo_name</span></tt>.</p>
+<p><strong>Example Request</strong>:</p>
+<div class="highlight-http"><pre>PUT /v1/repositories/foo/bar/ HTTP/1.1
+Host: index.docker.io
+Accept: application/json
+Content-Type: application/json
+Authorization: Basic akmklmasadalkm==
+X-Docker-Token: true
+
+[{“id”: “9e89cc6f0bc3c38722009fe6857087b486531f9a779a0c17e3ed29dae8f12c4f”}]</pre>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>namespace</strong> &#8211; the namespace for the repo</li>
+<li><strong>repo_name</strong> &#8211; the name for the repo</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example Response</strong>:</p>
+<div class="highlight-http"><pre>HTTP/1.1 200
+Vary: Accept
+Content-Type: application/json
+WWW-Authenticate: Token signature=123abc,repository=”foo/bar”,access=write
+X-Docker-Endpoints: registry-1.docker.io [, registry-2.docker.io]
+
+""</pre>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>200</strong> &#8211; Created</li>
+<li><strong>400</strong> &#8211; Errors (invalid json, missing or invalid fields, etc)</li>
+<li><strong>401</strong> &#8211; Unauthorized</li>
+<li><strong>403</strong> &#8211; Account is not Active</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="delete">
+<dt id="delete--v1-repositories-(namespace)-(repo_name)-">
+<tt class="descname">DELETE </tt><tt class="descname">/v1/repositories/</tt><big>(</big><em>namespace</em><big>)</big><tt class="descname">/</tt><big>(</big><em>repo_name</em><big>)</big><tt class="descname">/</tt></dt>
+<dd><p>Delete a user repository with the given <tt class="docutils literal"><span class="pre">namespace</span></tt> and <tt class="docutils literal"><span class="pre">repo_name</span></tt>.</p>
+<p><strong>Example Request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="nf">DELETE</span> <span class="nn">/v1/repositories/foo/bar/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">index.docker.io</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+<span class="na">Authorization</span><span class="o">:</span> <span class="l">Basic akmklmasadalkm==</span>
+<span class="na">X-Docker-Token</span><span class="o">:</span> <span class="l">true</span>
+
+<span class="s2">&quot;&quot;</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>namespace</strong> &#8211; the namespace for the repo</li>
+<li><strong>repo_name</strong> &#8211; the name for the repo</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example Response</strong>:</p>
+<div class="highlight-http"><pre>HTTP/1.1 202
+Vary: Accept
+Content-Type: application/json
+WWW-Authenticate: Token signature=123abc,repository=”foo/bar”,access=delete
+X-Docker-Endpoints: registry-1.docker.io [, registry-2.docker.io]
+
+""</pre>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>200</strong> &#8211; Deleted</li>
+<li><strong>202</strong> &#8211; Accepted</li>
+<li><strong>400</strong> &#8211; Errors (invalid json, missing or invalid fields, etc)</li>
+<li><strong>401</strong> &#8211; Unauthorized</li>
+<li><strong>403</strong> &#8211; Account is not Active</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="library-repo">
+<h5><a class="toc-backref" href="#id10">Library Repo</a></h5>
+<dl class="put">
+<dt id="put--v1-repositories-(repo_name)-">
+<tt class="descname">PUT </tt><tt class="descname">/v1/repositories/</tt><big>(</big><em>repo_name</em><big>)</big><tt class="descname">/</tt></dt>
+<dd><p>Create a library repository with the given <tt class="docutils literal"><span class="pre">repo_name</span></tt>.
+This is a restricted feature only available to docker admins.</p>
+<p>When namespace is missing, it is assumed to be <tt class="docutils literal"><span class="pre">library</span></tt></p>
+<p><strong>Example Request</strong>:</p>
+<div class="highlight-http"><pre>PUT /v1/repositories/foobar/ HTTP/1.1
+Host: index.docker.io
+Accept: application/json
+Content-Type: application/json
+Authorization: Basic akmklmasadalkm==
+X-Docker-Token: true
+
+[{“id”: “9e89cc6f0bc3c38722009fe6857087b486531f9a779a0c17e3ed29dae8f12c4f”}]</pre>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>repo_name</strong> &#8211; the library name for the repo</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example Response</strong>:</p>
+<div class="highlight-http"><pre>HTTP/1.1 200
+Vary: Accept
+Content-Type: application/json
+WWW-Authenticate: Token signature=123abc,repository=”library/foobar”,access=write
+X-Docker-Endpoints: registry-1.docker.io [, registry-2.docker.io]
+
+""</pre>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>200</strong> &#8211; Created</li>
+<li><strong>400</strong> &#8211; Errors (invalid json, missing or invalid fields, etc)</li>
+<li><strong>401</strong> &#8211; Unauthorized</li>
+<li><strong>403</strong> &#8211; Account is not Active</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="delete">
+<dt id="delete--v1-repositories-(repo_name)-">
+<tt class="descname">DELETE </tt><tt class="descname">/v1/repositories/</tt><big>(</big><em>repo_name</em><big>)</big><tt class="descname">/</tt></dt>
+<dd><p>Delete a library repository with the given <tt class="docutils literal"><span class="pre">repo_name</span></tt>.
+This is a restricted feature only available to docker admins.</p>
+<p>When namespace is missing, it is assumed to be <tt class="docutils literal"><span class="pre">library</span></tt></p>
+<p><strong>Example Request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="nf">DELETE</span> <span class="nn">/v1/repositories/foobar/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">index.docker.io</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+<span class="na">Authorization</span><span class="o">:</span> <span class="l">Basic akmklmasadalkm==</span>
+<span class="na">X-Docker-Token</span><span class="o">:</span> <span class="l">true</span>
+
+<span class="s2">&quot;&quot;</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>repo_name</strong> &#8211; the library name for the repo</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example Response</strong>:</p>
+<div class="highlight-http"><pre>HTTP/1.1 202
+Vary: Accept
+Content-Type: application/json
+WWW-Authenticate: Token signature=123abc,repository=”library/foobar”,access=delete
+X-Docker-Endpoints: registry-1.docker.io [, registry-2.docker.io]
+
+""</pre>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>200</strong> &#8211; Deleted</li>
+<li><strong>202</strong> &#8211; Accepted</li>
+<li><strong>400</strong> &#8211; Errors (invalid json, missing or invalid fields, etc)</li>
+<li><strong>401</strong> &#8211; Unauthorized</li>
+<li><strong>403</strong> &#8211; Account is not Active</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="repository-images">
+<h4><a class="toc-backref" href="#id11">Repository Images</a></h4>
+<div class="section" id="user-repo-images">
+<h5><a class="toc-backref" href="#id12">User Repo Images</a></h5>
+<dl class="put">
+<dt id="put--v1-repositories-(namespace)-(repo_name)-images">
+<tt class="descname">PUT </tt><tt class="descname">/v1/repositories/</tt><big>(</big><em>namespace</em><big>)</big><tt class="descname">/</tt><big>(</big><em>repo_name</em><big>)</big><tt class="descname">/images</tt></dt>
+<dd><p>Update the images for a user repo.</p>
+<p><strong>Example Request</strong>:</p>
+<div class="highlight-http"><pre>PUT /v1/repositories/foo/bar/images HTTP/1.1
+Host: index.docker.io
+Accept: application/json
+Content-Type: application/json
+Authorization: Basic akmklmasadalkm==
+
+[{“id”: “9e89cc6f0bc3c38722009fe6857087b486531f9a779a0c17e3ed29dae8f12c4f”,
+“checksum”: “b486531f9a779a0c17e3ed29dae8f12c4f9e89cc6f0bc3c38722009fe6857087”}]</pre>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>namespace</strong> &#8211; the namespace for the repo</li>
+<li><strong>repo_name</strong> &#8211; the name for the repo</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example Response</strong>:</p>
+<div class="highlight-http"><pre>HTTP/1.1 204
+Vary: Accept
+Content-Type: application/json
+
+""</pre>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>204</strong> &#8211; Created</li>
+<li><strong>400</strong> &#8211; Errors (invalid json, missing or invalid fields, etc)</li>
+<li><strong>401</strong> &#8211; Unauthorized</li>
+<li><strong>403</strong> &#8211; Account is not Active or permission denied</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="get">
+<dt id="get--v1-repositories-(namespace)-(repo_name)-images">
+<tt class="descname">GET </tt><tt class="descname">/v1/repositories/</tt><big>(</big><em>namespace</em><big>)</big><tt class="descname">/</tt><big>(</big><em>repo_name</em><big>)</big><tt class="descname">/images</tt></dt>
+<dd><p>get the images for a user repo.</p>
+<p><strong>Example Request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="nf">GET</span> <span class="nn">/v1/repositories/foo/bar/images</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">index.docker.io</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>namespace</strong> &#8211; the namespace for the repo</li>
+<li><strong>repo_name</strong> &#8211; the name for the repo</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example Response</strong>:</p>
+<div class="highlight-http"><pre>HTTP/1.1 200
+Vary: Accept
+Content-Type: application/json
+
+[{“id”: “9e89cc6f0bc3c38722009fe6857087b486531f9a779a0c17e3ed29dae8f12c4f”,
+“checksum”: “b486531f9a779a0c17e3ed29dae8f12c4f9e89cc6f0bc3c38722009fe6857087”},
+{“id”: “ertwetewtwe38722009fe6857087b486531f9a779a0c1dfddgfgsdgdsgds”,
+“checksum”: “34t23f23fc17e3ed29dae8f12c4f9e89cc6f0bsdfgfsdgdsgdsgerwgew”}]</pre>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>200</strong> &#8211; OK</li>
+<li><strong>404</strong> &#8211; Not found</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="library-repo-images">
+<h5><a class="toc-backref" href="#id13">Library Repo Images</a></h5>
+<dl class="put">
+<dt id="put--v1-repositories-(repo_name)-images">
+<tt class="descname">PUT </tt><tt class="descname">/v1/repositories/</tt><big>(</big><em>repo_name</em><big>)</big><tt class="descname">/images</tt></dt>
+<dd><p>Update the images for a library repo.</p>
+<p><strong>Example Request</strong>:</p>
+<div class="highlight-http"><pre>PUT /v1/repositories/foobar/images HTTP/1.1
+Host: index.docker.io
+Accept: application/json
+Content-Type: application/json
+Authorization: Basic akmklmasadalkm==
+
+[{“id”: “9e89cc6f0bc3c38722009fe6857087b486531f9a779a0c17e3ed29dae8f12c4f”,
+“checksum”: “b486531f9a779a0c17e3ed29dae8f12c4f9e89cc6f0bc3c38722009fe6857087”}]</pre>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>repo_name</strong> &#8211; the library name for the repo</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example Response</strong>:</p>
+<div class="highlight-http"><pre>HTTP/1.1 204
+Vary: Accept
+Content-Type: application/json
+
+""</pre>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>204</strong> &#8211; Created</li>
+<li><strong>400</strong> &#8211; Errors (invalid json, missing or invalid fields, etc)</li>
+<li><strong>401</strong> &#8211; Unauthorized</li>
+<li><strong>403</strong> &#8211; Account is not Active or permission denied</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="get">
+<dt id="get--v1-repositories-(repo_name)-images">
+<tt class="descname">GET </tt><tt class="descname">/v1/repositories/</tt><big>(</big><em>repo_name</em><big>)</big><tt class="descname">/images</tt></dt>
+<dd><p>get the images for a library repo.</p>
+<p><strong>Example Request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="nf">GET</span> <span class="nn">/v1/repositories/foobar/images</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">index.docker.io</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>repo_name</strong> &#8211; the library name for the repo</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example Response</strong>:</p>
+<div class="highlight-http"><pre>HTTP/1.1 200
+Vary: Accept
+Content-Type: application/json
+
+[{“id”: “9e89cc6f0bc3c38722009fe6857087b486531f9a779a0c17e3ed29dae8f12c4f”,
+“checksum”: “b486531f9a779a0c17e3ed29dae8f12c4f9e89cc6f0bc3c38722009fe6857087”},
+{“id”: “ertwetewtwe38722009fe6857087b486531f9a779a0c1dfddgfgsdgdsgds”,
+“checksum”: “34t23f23fc17e3ed29dae8f12c4f9e89cc6f0bsdfgfsdgdsgdsgerwgew”}]</pre>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>200</strong> &#8211; OK</li>
+<li><strong>404</strong> &#8211; Not found</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="repository-authorization">
+<h4><a class="toc-backref" href="#id14">Repository Authorization</a></h4>
+<div class="section" id="id1">
+<h5><a class="toc-backref" href="#id15">Library Repo</a></h5>
+<dl class="put">
+<dt id="put--v1-repositories-(repo_name)-auth">
+<tt class="descname">PUT </tt><tt class="descname">/v1/repositories/</tt><big>(</big><em>repo_name</em><big>)</big><tt class="descname">/auth</tt></dt>
+<dd><p>authorize a token for a library repo</p>
+<p><strong>Example Request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="nf">PUT</span> <span class="nn">/v1/repositories/foobar/auth</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">index.docker.io</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+<span class="na">Authorization</span><span class="o">:</span> <span class="l">Token signature=123abc,repository=&quot;library/foobar&quot;,access=write</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>repo_name</strong> &#8211; the library name for the repo</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example Response</strong>:</p>
+<div class="highlight-http"><pre>HTTP/1.1 200
+Vary: Accept
+Content-Type: application/json
+
+"OK"</pre>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>200</strong> &#8211; OK</li>
+<li><strong>403</strong> &#8211; Permission denied</li>
+<li><strong>404</strong> &#8211; Not found</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="id2">
+<h5><a class="toc-backref" href="#id16">User Repo</a></h5>
+<dl class="put">
+<dt id="put--v1-repositories-(namespace)-(repo_name)-auth">
+<tt class="descname">PUT </tt><tt class="descname">/v1/repositories/</tt><big>(</big><em>namespace</em><big>)</big><tt class="descname">/</tt><big>(</big><em>repo_name</em><big>)</big><tt class="descname">/auth</tt></dt>
+<dd><p>authorize a token for a user repo</p>
+<p><strong>Example Request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="nf">PUT</span> <span class="nn">/v1/repositories/foo/bar/auth</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">index.docker.io</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+<span class="na">Authorization</span><span class="o">:</span> <span class="l">Token signature=123abc,repository=&quot;foo/bar&quot;,access=write</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>namespace</strong> &#8211; the namespace for the repo</li>
+<li><strong>repo_name</strong> &#8211; the name for the repo</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example Response</strong>:</p>
+<div class="highlight-http"><pre>HTTP/1.1 200
+Vary: Accept
+Content-Type: application/json
+
+"OK"</pre>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>200</strong> &#8211; OK</li>
+<li><strong>403</strong> &#8211; Permission denied</li>
+<li><strong>404</strong> &#8211; Not found</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+</div>
+<div class="section" id="users">
+<h3><a class="toc-backref" href="#id17">2.2 Users</a></h3>
+<div class="section" id="user-login">
+<h4><a class="toc-backref" href="#id18">User Login</a></h4>
+<dl class="get">
+<dt id="get--v1-users">
+<tt class="descname">GET </tt><tt class="descname">/v1/users</tt></dt>
+<dd><p>If you want to check your login, you can try this endpoint</p>
+<p><strong>Example Request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="nf">GET</span> <span class="nn">/v1/users</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">index.docker.io</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+<span class="na">Authorization</span><span class="o">:</span> <span class="l">Basic akmklmasadalkm==</span>
+</pre></div>
+</div>
+<p><strong>Example Response</strong>:</p>
+<div class="highlight-http"><pre>HTTP/1.1 200 OK
+Vary: Accept
+Content-Type: application/json
+
+OK</pre>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>200</strong> &#8211; no error</li>
+<li><strong>401</strong> &#8211; Unauthorized</li>
+<li><strong>403</strong> &#8211; Account is not Active</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="user-register">
+<h4><a class="toc-backref" href="#id19">User Register</a></h4>
+<dl class="post">
+<dt id="post--v1-users">
+<tt class="descname">POST </tt><tt class="descname">/v1/users</tt></dt>
+<dd><p>Registering a new account.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><pre>POST /v1/users HTTP/1.1
+Host: index.docker.io
+Accept: application/json
+Content-Type: application/json
+
+{"email": "sam@dotcloud.com",
+ "password": "toto42",
+ "username": "foobar"'}</pre>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Json Parameters:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>email</strong> &#8211; valid email address, that needs to be confirmed</li>
+<li><strong>username</strong> &#8211; min 4 character, max 30 characters, must match the regular expression [<a href="#id23"><span class="problematic" id="id24">a-z0-9_</span></a>].</li>
+<li><strong>password</strong> &#8211; min 5 characters</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example Response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">201</span> <span class="ne">OK</span>
+<span class="na">Vary</span><span class="o">:</span> <span class="l">Accept</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="s2">&quot;User Created&quot;</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>201</strong> &#8211; User Created</li>
+<li><strong>400</strong> &#8211; Errors (invalid json, missing or invalid fields, etc)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="update-user">
+<h4><a class="toc-backref" href="#id20">Update User</a></h4>
+<dl class="put">
+<dt id="put--v1-users-(username)-">
+<tt class="descname">PUT </tt><tt class="descname">/v1/users/</tt><big>(</big><em>username</em><big>)</big><tt class="descname">/</tt></dt>
+<dd><p>Change a password or email address for given user. If you pass in an email,
+it will add it to your account, it will not remove the old one. Passwords will
+be updated.</p>
+<p>It is up to the client to verify that that password that is sent is the one that
+they want. Common approach is to have them type it twice.</p>
+<p><strong>Example Request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="nf">PUT</span> <span class="nn">/v1/users/fakeuser/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">index.docker.io</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+<span class="na">Authorization</span><span class="o">:</span> <span class="l">Basic akmklmasadalkm==</span>
+
+<span class="p">{</span><span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;sam@dotcloud.com&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;toto42&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>username</strong> &#8211; username for the person you want to update</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example Response</strong>:</p>
+<div class="highlight-http"><pre>HTTP/1.1 204
+Vary: Accept
+Content-Type: application/json
+
+""</pre>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>204</strong> &#8211; User Updated</li>
+<li><strong>400</strong> &#8211; Errors (invalid json, missing or invalid fields, etc)</li>
+<li><strong>401</strong> &#8211; Unauthorized</li>
+<li><strong>403</strong> &#8211; Account is not Active</li>
+<li><strong>404</strong> &#8211; User not found</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="search">
+<h3><a class="toc-backref" href="#id21">2.3 Search</a></h3>
+<p>If you need to search the index, this is the endpoint you would use.</p>
+<div class="section" id="id3">
+<h4><a class="toc-backref" href="#id22">Search</a></h4>
+<dl class="get">
+<dt id="get--v1-search">
+<tt class="descname">GET </tt><tt class="descname">/v1/search</tt></dt>
+<dd><p>Search the Index given a search term. It accepts <a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.3">GET</a> only.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="nf">GET</span> <span class="nn">/v1/search?q=search_term</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">example.com</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Vary</span><span class="o">:</span> <span class="l">Accept</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">{</span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="s2">&quot;search_term&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;num_results&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+  <span class="nt">&quot;results&quot;</span> <span class="p">:</span> <span class="p">[</span>
+     <span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;dotcloud/base&quot;</span><span class="p">,</span> <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;A base ubuntu64  image...&quot;</span><span class="p">},</span>
+     <span class="p">{</span><span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;base2&quot;</span><span class="p">,</span> <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;A base ubuntu64  image...&quot;</span><span class="p">},</span>
+   <span class="p">]</span>
+ <span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Query Parameters:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><ul class="first simple">
+<li><strong>q</strong> &#8211; what you want to search for</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><strong>200</strong> &#8211; no error</li>
+<li><strong>500</strong> &#8211; server error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+</div>
+</div>
+
+
+            </section>
+
+        </div>
+    </div>
+</div>
+
+<div id="footer" class="container" >
+    <div class="row">
+
+        <div class="span12 footer">
+            <div class="tbox textright forceleftmargin social links pull-right">
+                <a class="twitter" href="http://twitter.com/getdocker">Twitter</a>
+                <a class="github" href="https://github.com/dotcloud/docker/">GitHub</a>
+            </div>
+
+            Docker is a project by <a href="http://www.dotcloud.com">dotCloud</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+</div>
+
+
+  <!-- script which should be loaded after everything else -->
+<script type="text/javascript">
+
+    // Function to make the sticky header possible
+    var shiftWindow = function() {
+        scrollBy(0, -70);
+        console.log("window shifted")
+    };
+    window.addEventListener("hashchange", shiftWindow);
+
+    function loadShift() {
+        if (window.location.hash) {
+            console.log("window has hash");
+            shiftWindow();
+        }
+    }
+
+    $(window).load(function() {
+        loadShift();
+        console.log("late loadshift");
+    });
+
+    $(function(){
+
+        // sidebar accordian-ing
+        // don't apply on last object (it should be the FAQ)
+
+        // define an array to which all opened items should be added
+        var openmenus = [];
+
+        var elements = $('.toctree-l2');
+        for (var i = 0; i < elements.length; i += 1) { var current = $(elements[i]); current.children('ul').hide();}
+
+
+        // set initial collapsed state
+        var elements = $('.toctree-l1');
+        for (var i = 0; i < elements.length; i += 1) {
+            var current = $(elements[i]);
+            if (current.hasClass('current')) {
+
+                currentlink = current.children('a')[0].href;
+                openmenus.push(currentlink);
+
+                // do nothing
+            } else {
+                // collapse children
+                current.children('ul').hide();
+            }
+        }
+
+        // attached handler on click
+        $('.sidebar > ul > li > a').not(':last').click(function(){
+
+            var index = $.inArray(this.href, openmenus)
+
+            if (index > -1) {
+                console.log(index);
+                openmenus.splice(index, 1);
+
+
+                $(this).parent().children('ul').slideUp(200, function() {
+                    // $(this).parent().removeClass('current'); // toggle after effect
+                });
+            }
+            else {
+                openmenus.push(this.href);
+                console.log(this);
+
+                var current = $(this);
+
+                setTimeout(function() {
+                    $('.sidebar > ul > li').removeClass('current');
+                    current.parent().addClass('current'); // toggle before effect
+                    current.parent().children('ul').hide();
+                    current.parent().children('ul').slideDown(200);
+                }, 100);
+            }
+            return false;
+        });
+
+    });
+</script>
+
+    <!-- Google analytics -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-6096819-11']);
+        _gaq.push(['_setDomainName', 'docker.io']);
+        _gaq.push(['_setAllowLinker', true]);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+
+</body>
+</html>

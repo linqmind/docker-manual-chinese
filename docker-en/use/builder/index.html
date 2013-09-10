@@ -1,0 +1,595 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="google-site-verification" content="UxV66EKuPe87dgnH1sbrldrx6VsoWMrx5NjwkgUFxXI" />
+
+    <title>Docker Builder - Docker Documentation</title>
+
+    <meta name="description" content="Docker Builder specifes a simple DSL which allows you to automate the steps you would normally manually take to create an image." />
+    <meta name="keywords" content="builder, docker, Docker Builder, automation, image creation" />
+
+    <script type="text/javascript">
+        // This is probably used by the search engine
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:    '../../',
+            VERSION:     '0',
+            COLLAPSE_INDEX: false,
+            FILE_SUFFIX: '',
+            HAS_SOURCE:  true
+        };
+    </script>
+    <link rel="stylesheet" href="../../_static/css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/bootstrap-responsive.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/main.css" type="text/css" />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/docs.js"></script>
+
+</head>
+
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-dotcloud">
+        <div class="container" style="text-align: center;">
+
+            <div style="float: right" class="pull-right">
+                <ul class="nav">
+                    <li id="nav-introduction"><a href="http://www.docker.io/">Introduction</a></li>
+                    <li id="nav-gettingstarted"><a href="http://www.docker.io/gettingstarted/">Getting started</a></li>
+                    <li id="nav-documentation" class="active"><a href="http://docs.docker.io/en/latest/">Documentation</a></li>
+                    <li id="nav-blog"><a href="http://blog.docker.io/">Blog</a></li>
+                </ul>
+                <!--<div class="social links" style="float: right; margin-top: 14px; margin-left: 12px">-->
+                    <!--<a class="twitter" href="http://twitter.com/getdocker">Twitter</a>-->
+                    <!--<a class="github" href="https://github.com/dotcloud/docker/">GitHub</a>-->
+                <!--</div>-->
+            </div>
+
+            <div style="margin-left: -12px; float: left;">
+                <a href="http://www.docker.io"><img style="margin-top: 12px; height: 38px" src="../../_static/img/docker-letters-logo.gif"></a>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="span12 titlebar">
+            <!--<span class="pull-right" style="margin-left: 20px; font-size: 20px">0.1</span>-->
+            <div class="pull-right" id="fork-us" style="margin-top: 16px; margin-right: 16px;">
+                <a  href="http://github.com/dotcloud/docker/"><img src="../../_static/img/fork-us.png"> Fork us on Github</a>
+            </div>
+            <h1 class="pageheader">DOCUMENTATION</h1>
+
+        </div>
+    </div>
+
+</div>
+
+<div class="container">
+
+    <!-- Docs nav
+     ================================================== -->
+    <div class="row" style="position: relative">
+        <div class="span3" style="height:100%;" >
+
+        </div>
+
+        <div class="span3 sidebar bs-docs-sidebar" style="position: absolute">
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../concepts/">Concepts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../">Introduction</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation/">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../installation/ubuntulinux/">Ubuntu Linux</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../installation/binaries/">Binaries</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../installation/vagrant/">Using Vagrant (Mac, Linux)</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../installation/windows/">Using Vagrant (Windows)</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../installation/amazon/">Amazon EC2</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../installation/rackspace/">Rackspace Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../installation/archlinux/">Arch Linux</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../installation/upgrading/">Upgrading</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../installation/kernel/">Kernel Requirements</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../">Use</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../basics/">The Basics</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../workingwithrepository/">Working with the Repository</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Docker Builder</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../puppet/">Using Puppet</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/running_examples/">Running the Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/hello_world/">Hello World</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/hello_world_daemon/">Hello World Daemon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/python_web_app/">Python Web App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/nodejs_web_app/">Node.js Web App</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/running_redis_service/">Redis Service</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/running_ssh_service/">SSH Daemon Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/couchdb_data_volumes/">CouchDB Service</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../commandline/">Commands</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../commandline/cli/">Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../commandline/command/attach/"><tt class="docutils literal"><span class="pre">attach</span></tt> &#8211; Attach to a running container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../commandline/command/build/"><tt class="docutils literal"><span class="pre">build</span></tt> &#8211; Build a container from a Dockerfile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../commandline/command/commit/"><tt class="docutils literal"><span class="pre">commit</span></tt> &#8211; Create a new image from a container&#8217;s changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../commandline/command/diff/"><tt class="docutils literal"><span class="pre">diff</span></tt> &#8211; Inspect changes on a container&#8217;s filesystem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../commandline/command/export/"><tt class="docutils literal"><span class="pre">export</span></tt> &#8211; Stream the contents of a container as a tar archive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../commandline/command/history/"><tt class="docutils literal"><span class="pre">history</span></tt> &#8211; Show the history of an image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../commandline/command/images/"><tt class="docutils literal"><span class="pre">images</span></tt> &#8211; List images</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../commandline/command/import/"><tt class="docutils literal"><span class="pre">import</span></tt> &#8211; Create a new filesystem image from the contents of a tarball</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../commandline/command/info/"><tt class="docutils literal"><span class="pre">info</span></tt> &#8211; Display system-wide information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../commandline/command/inspect/"><tt class="docutils literal"><span class="pre">inspect</span></tt> &#8211; Return low-level information on a container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../commandline/command/kill/"><tt class="docutils literal"><span class="pre">kill</span></tt> &#8211; Kill a running container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../commandline/command/login/"><tt class="docutils literal"><span class="pre">login</span></tt> &#8211; Register or Login to the docker registry server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../commandline/command/logs/"><tt class="docutils literal"><span class="pre">logs</span></tt> &#8211; Fetch the logs of a container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../commandline/command/port/"><tt class="docutils literal"><span class="pre">port</span></tt> &#8211; Lookup the public-facing port which is NAT-ed to PRIVATE_PORT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../commandline/command/ps/"><tt class="docutils literal"><span class="pre">ps</span></tt> &#8211; List containers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../commandline/command/pull/"><tt class="docutils literal"><span class="pre">pull</span></tt> &#8211; Pull an image or a repository from the docker registry server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../commandline/command/push/"><tt class="docutils literal"><span class="pre">push</span></tt> &#8211; Push an image or a repository to the docker registry server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../commandline/command/restart/"><tt class="docutils literal"><span class="pre">restart</span></tt> &#8211; Restart a running container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../commandline/command/rm/"><tt class="docutils literal"><span class="pre">rm</span></tt> &#8211; Remove a container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../commandline/command/rmi/"><tt class="docutils literal"><span class="pre">rmi</span></tt> &#8211; Remove an image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../commandline/command/run/"><tt class="docutils literal"><span class="pre">run</span></tt> &#8211; Run a command in a new container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../commandline/command/search/"><tt class="docutils literal"><span class="pre">search</span></tt> &#8211; Search for an image in the docker index</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../commandline/command/start/"><tt class="docutils literal"><span class="pre">start</span></tt> &#8211; Start a stopped container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../commandline/command/stop/"><tt class="docutils literal"><span class="pre">stop</span></tt> &#8211; Stop a running container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../commandline/command/tag/"><tt class="docutils literal"><span class="pre">tag</span></tt> &#8211; Tag an image into a repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../commandline/command/version/"><tt class="docutils literal"><span class="pre">version</span></tt> &#8211; Show the docker version information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../commandline/command/wait/"><tt class="docutils literal"><span class="pre">wait</span></tt> &#8211; Block until a container stops, then print its exit code</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../commandline/command/attach/">attach</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../commandline/command/build/">build</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../commandline/command/commit/">commit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../commandline/command/diff/">diff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../commandline/command/export/">export</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../commandline/command/history/">history</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../commandline/command/images/">images</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../commandline/command/import/">import</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../commandline/command/info/">info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../commandline/command/inspect/">inspect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../commandline/command/kill/">kill</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../commandline/command/login/">login</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../commandline/command/logs/">logs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../commandline/command/port/">port</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../commandline/command/ps/">ps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../commandline/command/pull/">pull</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../commandline/command/push/">push</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../commandline/command/restart/">restart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../commandline/command/rm/">rm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../commandline/command/rmi/">rmi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../commandline/command/run/">run</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../commandline/command/search/">search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../commandline/command/start/">start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../commandline/command/stop/">stop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../commandline/command/tag/">tag</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../commandline/command/version/">version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../commandline/command/wait/">wait</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/contributing/">Contributing to Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/devenvironment/">Setting Up a Dev Environment</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/">APIs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../api/registry_api/">Docker Registry API</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/index_search_api/">Docker Index Search API</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/docker_remote_api/">Docker Remote API</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq/">FAQ</a><ul class="simple">
+</ul>
+</li>
+</ul>
+
+        </div>
+
+        <!-- body block -->
+        <div class="span9">
+
+            <!-- Main section
+            ================================================== -->
+            <section id="global" class="containerblock">
+                
+  <div class="section" id="docker-builder">
+<h1><a class="toc-backref" href="#id1">Docker Builder</a></h1>
+<div class="contents topic" id="table-of-contents">
+<p class="topic-title first">Table of Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#docker-builder" id="id1">Docker Builder</a><ul>
+<li><a class="reference internal" href="#usage" id="id2">1. Usage</a></li>
+<li><a class="reference internal" href="#format" id="id3">2. Format</a></li>
+<li><a class="reference internal" href="#instructions" id="id4">2. Instructions</a><ul>
+<li><a class="reference internal" href="#from" id="id5">2.1 FROM</a></li>
+<li><a class="reference internal" href="#maintainer" id="id6">2.2 MAINTAINER</a></li>
+<li><a class="reference internal" href="#run" id="id7">2.3 RUN</a></li>
+<li><a class="reference internal" href="#cmd" id="id8">2.4 CMD</a></li>
+<li><a class="reference internal" href="#expose" id="id9">2.5 EXPOSE</a></li>
+<li><a class="reference internal" href="#env" id="id10">2.6 ENV</a></li>
+<li><a class="reference internal" href="#insert" id="id11">2.7 INSERT</a></li>
+<li><a class="reference internal" href="#add" id="id12">2.8 ADD</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#dockerfile-examples" id="id13">3. Dockerfile Examples</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>Docker Builder specifes a simple DSL which allows you to automate the steps you
+would normally manually take to create an image. Docker Build will run your
+steps and commit them along the way, giving you a final image.</p>
+<div class="section" id="usage">
+<h2><a class="toc-backref" href="#id2">1. Usage</a></h2>
+<p>To use Docker Builder, assemble the steps into a text file (commonly referred to
+as a Dockerfile) and supply this to <cite>docker build</cite> on STDIN, like so:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">docker</span> <span class="pre">build</span> <span class="pre">-</span> <span class="pre">&lt;</span> <span class="pre">Dockerfile</span></tt></div></blockquote>
+<p>Docker will run your steps one-by-one, committing the result if necessary,
+before finally outputting the ID of your new image.</p>
+</div>
+<div class="section" id="format">
+<h2><a class="toc-backref" href="#id3">2. Format</a></h2>
+<p>The Dockerfile format is quite simple:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">instruction</span> <span class="pre">arguments</span></tt></div></blockquote>
+<p>The Instruction is not case-sensitive, however convention is for them to be
+UPPERCASE in order to distinguish them from arguments more easily.</p>
+<p>Dockerfiles are evaluated in order, therefore the first instruction must be
+<cite>FROM</cite> in order to specify the base image from which you are building.</p>
+<p>Docker will ignore lines in Dockerfiles prefixed with &#8220;<cite>#</cite>&#8221;, so you may add
+comment lines. A comment marker in the rest of the line will be treated as an
+argument.</p>
+</div>
+<div class="section" id="instructions">
+<h2><a class="toc-backref" href="#id4">2. Instructions</a></h2>
+<p>Docker builder comes with a set of instructions, described below.</p>
+<div class="section" id="from">
+<h3><a class="toc-backref" href="#id5">2.1 FROM</a></h3>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">FROM</span> <span class="pre">&lt;image&gt;</span></tt></div></blockquote>
+<p>The <cite>FROM</cite> instruction sets the base image for subsequent instructions. As such,
+a valid Dockerfile must have it as its first instruction.</p>
+<p><cite>FROM</cite> can be included multiple times within a single Dockerfile in order to
+create multiple images. Simply make a note of the last image id output by the
+commit before each new <cite>FROM</cite> command.</p>
+</div>
+<div class="section" id="maintainer">
+<h3><a class="toc-backref" href="#id6">2.2 MAINTAINER</a></h3>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">MAINTAINER</span> <span class="pre">&lt;name&gt;</span></tt></div></blockquote>
+<p>The <cite>MAINTAINER</cite> instruction allows you to set the Author field of the generated
+images.</p>
+</div>
+<div class="section" id="run">
+<h3><a class="toc-backref" href="#id7">2.3 RUN</a></h3>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">RUN</span> <span class="pre">&lt;command&gt;</span></tt></div></blockquote>
+<p>The <cite>RUN</cite> instruction will execute any commands on the current image and commit
+the results. The resulting committed image will be used for the next step in the
+Dockerfile.</p>
+<p>Layering <cite>RUN</cite> instructions and generating commits conforms to the
+core concepts of Docker where commits are cheap and containers can be created
+from any point in an image&#8217;s history, much like source control.</p>
+</div>
+<div class="section" id="cmd">
+<h3><a class="toc-backref" href="#id8">2.4 CMD</a></h3>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">CMD</span> <span class="pre">&lt;command&gt;</span></tt></div></blockquote>
+<p>The <cite>CMD</cite> instruction sets the command to be executed when running the image.
+This is functionally equivalent to running
+<cite>docker commit -run &#8216;{&#8220;Cmd&#8221;: &lt;command&gt;}&#8217;</cite> outside the builder.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Don&#8217;t confuse <cite>RUN</cite> with <cite>CMD</cite>. <cite>RUN</cite> actually runs a command and commits
+the result; <cite>CMD</cite> does not execute anything at build time, but specifies the
+intended command for the image.</p>
+</div>
+</div>
+<div class="section" id="expose">
+<h3><a class="toc-backref" href="#id9">2.5 EXPOSE</a></h3>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">EXPOSE</span> <span class="pre">&lt;port&gt;</span> <span class="pre">[&lt;port&gt;...]</span></tt></div></blockquote>
+<p>The <cite>EXPOSE</cite> instruction sets ports to be publicly exposed when running the
+image. This is functionally equivalent to running
+<cite>docker commit -run &#8216;{&#8220;PortSpecs&#8221;: [&#8220;&lt;port&gt;&#8221;, &#8220;&lt;port2&gt;&#8221;]}&#8217;</cite> outside the builder.</p>
+</div>
+<div class="section" id="env">
+<h3><a class="toc-backref" href="#id10">2.6 ENV</a></h3>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">ENV</span> <span class="pre">&lt;key&gt;</span> <span class="pre">&lt;value&gt;</span></tt></div></blockquote>
+<p>The <cite>ENV</cite> instruction sets the environment variable <cite>&lt;key&gt;</cite> to the value
+<cite>&lt;value&gt;</cite>. This value will be passed to all future <tt class="docutils literal"><span class="pre">RUN</span></tt> instructions. This is
+functionally equivalent to prefixing the command with <cite>&lt;key&gt;=&lt;value&gt;</cite></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The environment variables will persist when a container is run from the resulting image.</p>
+</div>
+</div>
+<div class="section" id="insert">
+<h3><a class="toc-backref" href="#id11">2.7 INSERT</a></h3>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">INSERT</span> <span class="pre">&lt;file</span> <span class="pre">url&gt;</span> <span class="pre">&lt;path&gt;</span></tt></div></blockquote>
+<p>The <cite>INSERT</cite> instruction will download the file from the given url to the given
+path within the image. It is similar to <cite>RUN curl -o &lt;path&gt; &lt;url&gt;</cite>, assuming
+curl was installed within the image.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The path must include the file name.</p>
+</div>
+</div>
+<div class="section" id="add">
+<h3><a class="toc-backref" href="#id12">2.8 ADD</a></h3>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">ADD</span> <span class="pre">&lt;src&gt;</span> <span class="pre">&lt;dest&gt;</span></tt></div></blockquote>
+<p>The <cite>ADD</cite> instruction will insert the files from the <cite>&lt;src&gt;</cite> path of the context into <cite>&lt;dest&gt;</cite> path
+of the container.
+The context must be set in order to use this instruction. (see examples)</p>
+</div>
+</div>
+<div class="section" id="dockerfile-examples">
+<h2><a class="toc-backref" href="#id13">3. Dockerfile Examples</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c"># Nginx</span>
+<span class="c">#</span>
+<span class="c"># VERSION               0.0.1</span>
+
+FROM      ubuntu
+MAINTAINER Guillaume J. Charmes <span class="s2">&quot;guillaume@dotcloud.com&quot;</span>
+
+<span class="c"># make sure the package repository is up to date</span>
+RUN <span class="nb">echo</span> <span class="s2">&quot;deb http://archive.ubuntu.com/ubuntu precise main universe&quot;</span> &gt; /etc/apt/sources.list
+RUN apt-get update
+
+RUN apt-get install -y inotify-tools nginx apache2 openssh-server
+INSERT https://raw.github.com/creack/docker-vps/master/nginx-wrapper.sh /usr/sbin/nginx-wrapper
+</pre></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c"># Firefox over VNC</span>
+<span class="c">#</span>
+<span class="c"># VERSION               0.3</span>
+
+FROM ubuntu
+<span class="c"># make sure the package repository is up to date</span>
+RUN <span class="nb">echo</span> <span class="s2">&quot;deb http://archive.ubuntu.com/ubuntu precise main universe&quot;</span> &gt; /etc/apt/sources.list
+RUN apt-get update
+
+<span class="c"># Install vnc, xvfb in order to create a &#39;fake&#39; display and firefox</span>
+RUN apt-get install -y x11vnc xvfb firefox
+RUN mkdir /.vnc
+<span class="c"># Setup a password</span>
+RUN x11vnc -storepasswd 1234 ~/.vnc/passwd
+<span class="c"># Autostart firefox (might not be the best way, but it does the trick)</span>
+RUN bash -c <span class="s1">&#39;echo &quot;firefox&quot; &gt;&gt; /.bashrc&#39;</span>
+
+EXPOSE 5900
+CMD    <span class="o">[</span><span class="s2">&quot;x11vnc&quot;</span>, <span class="s2">&quot;-forever&quot;</span>, <span class="s2">&quot;-usepw&quot;</span>, <span class="s2">&quot;-create&quot;</span><span class="o">]</span>
+</pre></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c"># Multiple images example</span>
+<span class="c">#</span>
+<span class="c"># VERSION               0.1</span>
+
+FROM ubuntu
+RUN <span class="nb">echo </span>foo &gt; bar
+<span class="c"># Will output something like ===&gt; 907ad6c2736f</span>
+
+FROM ubuntu
+RUN <span class="nb">echo </span>moo &gt; oink
+<span class="c"># Will output something like ===&gt; 695d7793cbe4</span>
+
+<span class="c"># You&#39;ll now have two images, 907ad6c2736f with /bar, and 695d7793cbe4 with</span>
+<span class="c"># /oink.</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+            </section>
+
+        </div>
+    </div>
+</div>
+
+<div id="footer" class="container" >
+    <div class="row">
+
+        <div class="span12 footer">
+            <div class="tbox textright forceleftmargin social links pull-right">
+                <a class="twitter" href="http://twitter.com/getdocker">Twitter</a>
+                <a class="github" href="https://github.com/dotcloud/docker/">GitHub</a>
+            </div>
+
+            Docker is a project by <a href="http://www.dotcloud.com">dotCloud</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+</div>
+
+
+  <!-- script which should be loaded after everything else -->
+<script type="text/javascript">
+
+    // Function to make the sticky header possible
+    var shiftWindow = function() {
+        scrollBy(0, -70);
+        console.log("window shifted")
+    };
+    window.addEventListener("hashchange", shiftWindow);
+
+    function loadShift() {
+        if (window.location.hash) {
+            console.log("window has hash");
+            shiftWindow();
+        }
+    }
+
+    $(window).load(function() {
+        loadShift();
+        console.log("late loadshift");
+    });
+
+    $(function(){
+
+        // sidebar accordian-ing
+        // don't apply on last object (it should be the FAQ)
+
+        // define an array to which all opened items should be added
+        var openmenus = [];
+
+        var elements = $('.toctree-l2');
+        for (var i = 0; i < elements.length; i += 1) { var current = $(elements[i]); current.children('ul').hide();}
+
+
+        // set initial collapsed state
+        var elements = $('.toctree-l1');
+        for (var i = 0; i < elements.length; i += 1) {
+            var current = $(elements[i]);
+            if (current.hasClass('current')) {
+
+                currentlink = current.children('a')[0].href;
+                openmenus.push(currentlink);
+
+                // do nothing
+            } else {
+                // collapse children
+                current.children('ul').hide();
+            }
+        }
+
+        // attached handler on click
+        $('.sidebar > ul > li > a').not(':last').click(function(){
+
+            var index = $.inArray(this.href, openmenus)
+
+            if (index > -1) {
+                console.log(index);
+                openmenus.splice(index, 1);
+
+
+                $(this).parent().children('ul').slideUp(200, function() {
+                    // $(this).parent().removeClass('current'); // toggle after effect
+                });
+            }
+            else {
+                openmenus.push(this.href);
+                console.log(this);
+
+                var current = $(this);
+
+                setTimeout(function() {
+                    $('.sidebar > ul > li').removeClass('current');
+                    current.parent().addClass('current'); // toggle before effect
+                    current.parent().children('ul').hide();
+                    current.parent().children('ul').slideDown(200);
+                }, 100);
+            }
+            return false;
+        });
+
+    });
+</script>
+
+    <!-- Google analytics -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-6096819-11']);
+        _gaq.push(['_setDomainName', 'docker.io']);
+        _gaq.push(['_setAllowLinker', true]);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+
+</body>
+</html>
